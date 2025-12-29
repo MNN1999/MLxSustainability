@@ -1,6 +1,8 @@
-title: "Modelling CO₂ emissions per capita from human development and energy indicators"
-description: "Country-level panel data, regression, SHAP, semantic search and graph tools."
-theme: jekyll-theme-minimal
+# Modelling country-level CO₂ emissions per capita from human development and energy indicators (1995–2021)
+
+<style>
+.site-header { display: none; }
+</style>
 
 **Quick navigation links to:**  
 
