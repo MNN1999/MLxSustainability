@@ -2,9 +2,9 @@
 
 **Quick navigation links to:**  
 
-<a href="#notebooks" style="text-decoration:none; padding:3px 8px; border-radius:999px; border:1px solid #ddd;">Notebooks</a> ·
-<a href="#figures" style="text-decoration:none; padding:3px 8px; border-radius:999px; border:1px solid #ddd;">Figures</a> ·
-<a href="#environments" style="text-decoration:none; padding:3px 8px; border-radius:999px; border:1px solid #ddd;">Environments</a> ·
+<a href="#notebooks" style="text-decoration:none; padding:3px 8px; border-radius:999px; border:1px solid #ddd;">Notebooks</a> 
+<a href="#figures" style="text-decoration:none; padding:3px 8px; border-radius:999px; border:1px solid #ddd;">Figures</a> 
+<a href="#environments" style="text-decoration:none; padding:3px 8px; border-radius:999px; border:1px solid #ddd;">Environments</a> 
 <a href="https://github.com/MNN1999/MLxSustainability" style="text-decoration:none; padding:3px 8px; border-radius:999px; border:1px solid #ddd;">GitHub repo</a>
 
 ---
