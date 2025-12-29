@@ -14,6 +14,17 @@
 
 This project analyses how territorial CO₂ emissions per capita relate to human development, energy access and renewable energy across 204 countries (1995–2021), using a fully reproducible data and modelling pipeline.
 
+- Model performance comparison (linear vs Random Forest):  
+  [`model_comparison_table.png`](https://github.com/MNN1999/MLxSustainability/blob/main/figures/model_performance_rf_vs_linear.png)
+
+- SHAP summary plots:  
+  [`figures/shap_summary_beeswarm.png`](https://github.com/MNN1999/MLxSustainability/blob/main/figures/shap_summary_beeswarm.png)  
+  [`figures/shap_summary_bar.png`](https://github.com/MNN1999/MLxSustainability/blob/main/figures/shap_summary_bar.png)
+
+- Network Graph:  
+  [`HDnetwork.png`](https://github.com/MNN1999/MLxSustainability/blob/main/figures/HDnetwork.png)
+
+
 The workflow includes:
 
 - **Data ingestion and harmonisation**  
@@ -40,31 +51,21 @@ For full technical details, see the [README](README.md) and notebooks in the pro
 
 Core analysis and tools:
 
-- **01 – Data preparation & coverage**  
+- **Data preparation & coverage**  
   `rawdata_processing.ipynb`  
-  [View on GitHub](rawdata_processing.ipynb)
+  [View on GitHub](https://github.com/MNN1999/MLxSustainability/blob/main/rawdata_processing.ipynb)
 
-- **02 – EDA, modelling & SHAP**  
+- **EDA, modelling & SHAP**  
   `Eda_and_modelling.ipynb`  
-  [View on GitHub](Eda_and_modelling.ipynb)
+  [View on GitHub](https://github.com/MNN1999/MLxSustainability/blob/main/Eda_and_modelling.ipynb)
 
-- **03 – Semantic search & indicator graph**  
+- **Semantic search & indicator graph**  
   `Semantics_and_networkgraph.ipynb`  
-  [View on GitHub](Semantics_and_networkgraph.ipynb)
+  [View on GitHub](https://github.com/MNN1999/MLxSustainability/blob/main/Semantics_and_networkgraph.ipynb)
 
 ---
 
-## Figures
-
-Selected outputs:
-
-- Model performance comparison (linear vs Random Forest):  
-  `figures/model_performance_rf_vs_linear.png`
-- SHAP summary plots:  
-  `figures/shap_summary_beeswarm.png`  
-  `figures/shap_summary_bar.png`
-
-You can browse all figures in the [`figures/`](figures/) folder.
+Browese all figures directly in the [figures/ folder on GitHub](https://github.com/MNN1999/MLxSustainability/tree/main/figures).
 
 ---
 
@@ -72,5 +73,6 @@ You can browse all figures in the [`figures/`](figures/) folder.
 
 Reproducible environment specs:
 
-- Modelling + SHAP: [`env/ds-shap_environment.yml`](env/ds-shap_environment.yml)
-- Semantic search + graph: [`env/ds-text_environment.yml`](env/ds-text_environment.yml)
+- Modelling + SHAP: [`env/ds-shap_environment.yml`](https://github.com/MNN1999/MLxSustainability/blob/main/env/ds-shap_environment.yml)
+- Semantic search + graph: [`env/ds-text_environment.yml`](https://github.com/MNN1999/MLxSustainability/blob/main/env/ds-text_environment.yml)
+ 
