@@ -1,12 +1,11 @@
-# MLxSustainability – CO₂, human development & energy
+# CO₂ and Human Development
 
-**Quick navigation**
+**Quick navigation links to:**  
 
-- [Overview](#overview)
-- [Notebooks](#notebooks)
-- [Figures](#figures)
-- [Environments](#environments)
-- [GitHub repo](https://github.com/MNN1999/MLxSustainability)
+<a href="#notebooks" style="text-decoration:none; padding:3px 8px; border-radius:999px; border:1px solid #ddd;">Notebooks</a> ·
+<a href="#figures" style="text-decoration:none; padding:3px 8px; border-radius:999px; border:1px solid #ddd;">Figures</a> ·
+<a href="#environments" style="text-decoration:none; padding:3px 8px; border-radius:999px; border:1px solid #ddd;">Environments</a> ·
+<a href="https://github.com/MNN1999/MLxSustainability" style="text-decoration:none; padding:3px 8px; border-radius:999px; border:1px solid #ddd;">GitHub repo</a>
 
 ---
 
@@ -53,10 +52,6 @@ This project analyses how territorial CO₂ emissions per capita relate to human
   </tr>
 </table>
 
-
-
-
-
 The workflow includes:
 
 - **Data ingestion and harmonisation**  
@@ -83,20 +78,17 @@ For full technical details, see the [README](README.md) and notebooks in the pro
 
 Core analysis and tools:
 
-- **Data Preparation**
-  [View on GitHub](https://github.com/MNN1999/MLxSustainability/blob/main/rawdata_processing.ipynb)
+- **Data Preparation** [View on GitHub](https://github.com/MNN1999/MLxSustainability/blob/main/rawdata_processing.ipynb)
 
-- **EDA, Modelling & SHAP**   
-  [View on GitHub](https://github.com/MNN1999/MLxSustainability/blob/main/Eda_and_modelling.ipynb)
+- **EDA, Modelling & SHAP** [View on GitHub](https://github.com/MNN1999/MLxSustainability/blob/main/Eda_and_modelling.ipynb)
 
-- **Semantic search & Indicator Network Graph**   
-  [View on GitHub](https://github.com/MNN1999/MLxSustainability/blob/main/Semantics_and_networkgraph.ipynb)
+- **Semantic search & Indicator Network Graph** [View on GitHub](https://github.com/MNN1999/MLxSustainability/blob/main/Semantics_and_networkgraph.ipynb)
 
 ---
 
 ## Figures
 
-Browese all figures directly in the [figures folder on GitHub](https://github.com/MNN1999/MLxSustainability/tree/main/figures).
+Browese all images directly in the [figures folder on GitHub](https://github.com/MNN1999/MLxSustainability/tree/main/figures).
 
 ---
 
