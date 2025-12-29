@@ -15,14 +15,14 @@
 This project analyses how territorial CO₂ emissions per capita relate to human development, energy access and renewable energy across 204 countries (1995–2021), using a fully reproducible data and modelling pipeline.
 
 - Model performance comparison (linear vs Random Forest):  
-  [`model_comparison_table.png`](https://github.com/MNN1999/MLxSustainability/blob/main/figures/model_performance_rf_vs_linear.png)
+  ![`Model Performance: Linear regression vs Random Forest`](https://github.com/MNN1999/MLxSustainability/blob/main/figures/model_comparison.png)
 
 - SHAP summary plots:  
-  [`figures/shap_summary_beeswarm.png`](https://github.com/MNN1999/MLxSustainability/blob/main/figures/shap_summary_beeswarm.png)  
-  [`figures/shap_summary_bar.png`](https://github.com/MNN1999/MLxSustainability/blob/main/figures/shap_summary_bar.png)
+  ![`SHAP beeswarm plot`](https://github.com/MNN1999/MLxSustainability/blob/main/figures/shap_summary_beeswarm.png)  
+  ![`SHAP bar plot`](https://github.com/MNN1999/MLxSustainability/blob/main/figures/shap_summary_bar.png)
 
 - Network Graph:  
-  [`HDnetwork.png`](https://github.com/MNN1999/MLxSustainability/blob/main/figures/HDnetwork.png)
+  ![`Human Development Network`](https://github.com/MNN1999/MLxSustainability/blob/main/figures/HDnetwork.png)
 
 
 The workflow includes:
