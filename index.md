@@ -31,7 +31,7 @@ The workflow includes:
 - **AI tools for information retrieval and structure**  
   Builds a semantic search tool over indicator metadata using transformer-based sentence embeddings and vector search, and a small NetworkX graph linking indicators to thematic domains (emissions & energy, human development, demography, etc.).
 
-For full technical details, see the [README](README.md).
+For full technical details, see the [README](README.md) and notebooks in the project repository.
 
 
 ---
