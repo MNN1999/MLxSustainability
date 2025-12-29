@@ -1,5 +1,3 @@
-# Modelling country-level CO₂ emissions per capita from human development and energy indicators (1995–2021)
-
 **Quick navigation links to:**  
 
 <a href="#notebooks" style="text-decoration:none; padding:3px 8px; border-radius:999px; border:1px solid #ddd;">Notebooks</a> 
