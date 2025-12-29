@@ -14,15 +14,47 @@
 
 This project analyses how territorial CO₂ emissions per capita relate to human development, energy access and renewable energy across 204 countries (1995–2021), using a fully reproducible data and modelling pipeline.
 
-- Model performance comparison (linear vs Random Forest):  
-  ![`Model Performance: Linear regression vs Random Forest`](https://github.com/MNN1999/MLxSustainability/blob/main/figures/model_comparison.png)
+<table>
+  <tr>
+    <td>
+      <img
+        src="https://github.com/MNN1999/MLxSustainability/raw/main/figures/pairplot_modeldata.png"
+        alt="Pairplot of key model variables"
+        style="width:100%; max-width:420px; height:260px; object-fit:contain;"
+      />
+      <div><sub><b>Pairplot of key variables</b> – relationships between log CO₂, income, education, health and energy indicators</sub></div>
+    </td>
+    <td>
+      <img
+        src="https://github.com/MNN1999/MLxSustainability/raw/main/figures/model_comparison_table.png"
+        alt="Model performance: Linear Regression vs Random Forest"
+        style="width:100%; max-width:420px; height:260px; object-fit:contain;"
+      />
+      <div><sub><b>Model performance</b> – linear regression vs Random Forest (R² and MSE on test set)</sub></div>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <img
+        src="https://github.com/MNN1999/MLxSustainability/raw/main/figures/shap_summary_beeswarm.png"
+        alt="SHAP beeswarm summary"
+        style="width:100%; max-width:420px; height:260px; object-fit:contain;"
+      />
+      <div><sub><b>SHAP beeswarm</b> – distribution of feature contributions across all country–year observations</sub></div>
+    </td>
+    <td>
+      <img
+        src="https://github.com/MNN1999/MLxSustainability/raw/main/figures/shap_summary_bar.png"
+        alt="SHAP bar summary"
+        style="width:100%; max-width:420px; height:260px; object-fit:contain;"
+      />
+      <div><sub><b>SHAP global importance</b> – mean absolute contribution by feature</sub></div>
+    </td>
+  </tr>
+</table>
 
-- SHAP summary plots:  
-  ![`SHAP beeswarm plot`](https://github.com/MNN1999/MLxSustainability/blob/main/figures/shap_summary_beeswarm.png)  
-  ![`SHAP bar plot`](https://github.com/MNN1999/MLxSustainability/blob/main/figures/shap_summary_bar.png)
 
-- Network Graph:  
-  ![`Human Development Network`](https://github.com/MNN1999/MLxSustainability/blob/main/figures/HDnetwork.png)
+
 
 
 The workflow includes:
@@ -51,21 +83,20 @@ For full technical details, see the [README](README.md) and notebooks in the pro
 
 Core analysis and tools:
 
-- **Data preparation & coverage**  
-  `rawdata_processing.ipynb`  
+- **Data Preparation**
   [View on GitHub](https://github.com/MNN1999/MLxSustainability/blob/main/rawdata_processing.ipynb)
 
-- **EDA, modelling & SHAP**  
-  `Eda_and_modelling.ipynb`  
+- **EDA, Modelling & SHAP**   
   [View on GitHub](https://github.com/MNN1999/MLxSustainability/blob/main/Eda_and_modelling.ipynb)
 
-- **Semantic search & indicator graph**  
-  `Semantics_and_networkgraph.ipynb`  
+- **Semantic search & Indicator Network Graph**   
   [View on GitHub](https://github.com/MNN1999/MLxSustainability/blob/main/Semantics_and_networkgraph.ipynb)
 
 ---
 
-Browese all figures directly in the [figures/ folder on GitHub](https://github.com/MNN1999/MLxSustainability/tree/main/figures).
+## Figures
+
+Browese all figures directly in the [figures folder on GitHub](https://github.com/MNN1999/MLxSustainability/tree/main/figures).
 
 ---
 
@@ -73,6 +104,6 @@ Browese all figures directly in the [figures/ folder on GitHub](https://github.c
 
 Reproducible environment specs:
 
-- Modelling + SHAP: [`env/ds-shap_environment.yml`](https://github.com/MNN1999/MLxSustainability/blob/main/env/ds-shap_environment.yml)
-- Semantic search + graph: [`env/ds-text_environment.yml`](https://github.com/MNN1999/MLxSustainability/blob/main/env/ds-text_environment.yml)
+- Modelling + SHAP: [`Modelling and SHAP Environment`](https://github.com/MNN1999/MLxSustainability/blob/main/env/ds-shap_environment.yml)
+- Semantic search + graph: [`Semantic Environment`](https://github.com/MNN1999/MLxSustainability/blob/main/env/ds-text_environment.yml)
  
