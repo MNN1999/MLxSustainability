@@ -42,15 +42,15 @@ Core analysis and tools:
 
 - **01 – Data preparation & coverage**  
   `rawdata_processing.ipynb`  
-  [View on GitHub](notebooks/rawdata_processing.ipynb)
+  [View on GitHub](rawdata_processing.ipynb)
 
 - **02 – EDA, modelling & SHAP**  
   `Eda_and_modelling.ipynb`  
-  [View on GitHub](notebooks/Eda_and_modelling.ipynb)
+  [View on GitHub](Eda_and_modelling.ipynb)
 
 - **03 – Semantic search & indicator graph**  
   `Semantics_and_networkgraph.ipynb`  
-  [View on GitHub](notebooks/Semantics_and_networkgraph.ipynb)
+  [View on GitHub](Semantics_and_networkgraph.ipynb)
 
 ---
 
