@@ -1,4 +1,4 @@
-# CO₂ and Human Development
+# Modelling country-level CO₂ emissions per capita from human development and energy indicators (1995–2021)
 
 **Quick navigation links to:**  
 
