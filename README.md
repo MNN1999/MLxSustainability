@@ -155,28 +155,3 @@ This allows simple graph queries, for example:
 Although minimal, this graph representation illustrates how sustainability indicators and their relationships can be organised in a way that supports querying and integration with other tools.
 
 ---
-
-## Repository structure
-
-A possible layout for the repository:
-
-```text
-data/
-  raw/              # if raw files are shareable
-  processed/
-    model_data_clean.parquet
-
-notebooks/
-  01_data_prep_coverage.ipynb
-  02_eda_modelling.ipynb
-  03_indicator_search_graph.ipynb
-
-figures/
-  ... (key plots used in the README)
-
-env/
-  ds-shap_environment.yml
-  ds-text_environment.yml
-
-README.md
-```
