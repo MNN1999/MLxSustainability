@@ -385,202 +385,218 @@
                 </section>
 
                 <!-- PAGE 3: MODEL & INSIGHTS (stylistically aligned with Index A’s section layout) -->
-                <section id="page-model" class="page">
-                    <div class="container">
-                        <div class="content-wrapper">
-                            <!-- Header card -->
-                            <section class="section">
-                                <div class="card glass section-header-card">
-                                    <h2>Model &amp; Insights</h2>
-                                    <p>
-                                      The modelling setup is intentionally simple:
-                                      <strong>one outcome, a transparent baseline, and one non-linear model</strong>.
-                                      The objective is not to win a benchmark, but to produce
-                                      <strong>policy-grade explanations</strong>.
-                                    </p>
-                                    <p>
-                                      We use the Random Forest as a non-linear lens on the development–emissions relationship,
-                                      and SHAP to translate that lens into a set of <strong>actionable levers</strong>:
-                                      which factors raise emissions, which help bend the curve, and where there is room
-                                      for development with limited carbon penalty.
-                                    </p>
-                                </div>
-                            </section>
-
-                            <!-- Block 1: target, features, performance -->
-                            <section class="section glass">
-                                <div class="grid-2">
-                                    <article class="card">
-                                        <h3>Target &amp; feature design</h3>
-                                        <ul>
-                                            <li>
-                                                Outcome:
-                                                <code>co2_per_capita_log = log(1 + co2_per_capita)</code>.
-                                            </li>
-                                            <li>
-                                                Predictors:
-                                                <code>gni_pc_log</code> (income),
-                                                <code>mys</code> (education),
-                                                <code>life_expectancy</code>,
-                                                <code>under5_mortality_log</code>,
-                                                <code>electricity_access_pct</code>,
-                                                <code>renewable_energy_pct</code>,
-                                                <code>urban_population_pct</code>,
-                                                <code>population_growth_pct</code>.
-                                            </li>
-                                            <li>
-                                                Time-based split:
-                                                <strong>1995–2012 train</strong>,
-                                                <strong>2013–2021 test</strong>.
-                                            </li>
-                                        </ul>
-                                    </article>
-
-                                    <article class="card">
-                                        <h3>Models &amp; performance</h3>
-                                        <p>
-                                          Linear regression provides the baseline; a Random Forest captures non-linearities
-                                          and interactions while remaining compatible with SHAP explanations.
-                                        </p>
-                                        <table class="glass" style="width:100%; margin-top:10px; border-collapse:collapse;">
-                                            <thead>
-                                                <tr>
-                                                    <th style="text-align:left;">Model</th>
-                                                    <th style="text-align:left;">Dataset</th>
-                                                    <th style="text-align:left;">R²</th>
-                                                    <th style="text-align:left;">MSE</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>LinearRegression</td>
-                                                    <td>test</td>
-                                                    <td>0.794</td>
-                                                    <td>0.151</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>RandomForest</td>
-                                                    <td>test</td>
-                                                    <td><strong>0.888</strong></td>
-                                                    <td><strong>0.082</strong></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                        <p style="margin-top:10px;">
-                                          The Random Forest explains <strong>~89% of the variance</strong> in log CO₂ per capita
-                                          in the test window, providing a strong but still interpretable basis for insight.
-                                        </p>
-                                    </article>
-                                </div>
-                            </section>
-
-                            <!-- Block 2: global vs local SHAP -->
-                            <section class="section glass">
-                                <div class="grid-2">
-                                    <article class="card">
-                                        <h3>Global feature importance</h3>
-                                        <p>
-                                          SHAP and tree-based feature importance paint a consistent hierarchy:
-                                        </p>
-                                        <ul>
-                                            <li><code>gni_pc_log</code> is the dominant driver of higher emissions per capita.</li>
-                                            <li>
-                                              <code>renewable_energy_pct</code> exerts a strong negative effect: higher shares
-                                              systematically push predicted emissions down.
-                                            </li>
-                                            <li>
-                                              Electricity access, urbanisation, education and life expectancy
-                                              increase emissions on average – reflecting that
-                                              <strong>historical development has been carbon-intensive</strong>.
-                                            </li>
-                                            <li>
-                                              Under-five mortality and population growth play smaller, but non-zero, roles.
-                                            </li>
-                                        </ul>
-                                        <p>
-                                          The global SHAP summary is the “league table” of levers – it tells us where
-                                          to look when designing policy.
-                                        </p>
-                                    </article>
-
-                                    <article class="card">
-                                        <h3>Local stories: country–year decompositions</h3>
-                                        <p>
-                                          SHAP values at the country–year level show how the same model behaves across
-                                          different development paths:
-                                        </p>
-                                        <ul>
-                                            <li>
-                                              High-income, fully electrified countries typically have strong positive pushes
-                                              from income, urban share and electricity access, partially offset by renewables.
-                                            </li>
-                                            <li>
-                                              Emerging economies show “jumps” in predicted emissions when electricity access
-                                              and urbanisation accelerate.
-                                            </li>
-                                            <li>
-                                              Countries with high <code>renewable_energy_pct</code> get visible downward
-                                              corrections even at similar income levels.
-                                            </li>
-                                        </ul>
-                                        <p>
-                                          This is the level you need for questions like:
-                                          <em>“If we scale renewables and electrification in this country, what happens to the
-                                          emissions profile conditional on its income?”</em>
-                                        </p>
-                                    </article>
-                                </div>
-                            </section>
-
-                            <!-- Block 3: AI tools (semantic search + graph) -->
-                            <section class="section glass">
-                                <h3>AI tools for indicator discovery</h3>
-                                <div class="grid-2">
-                                    <article class="card">
-                                        <h4>Semantic search over indicators</h4>
-                                        <p>
-                                          Using a transformer model (<code>all-MiniLM-L6-v2</code>), I embed short descriptions
-                                          of each indicator and expose a helper:
-                                          <code>search_indicators(query, top_k)</code>.
-                                        </p>
-                                        <ul>
-                                            <li>
-                                              Queries like “energy poverty”, “child health”, or “urban emissions”
-                                              return the closest indicators in embedding space.
-                                            </li>
-                                            <li>
-                                              This mirrors how analysts actually think: they start with a question,
-                                              not a column name.
-                                            </li>
-                                        </ul>
-                                        <p>
-                                          It’s a small but concrete example of using <strong>modern NLP</strong> to
-                                          make classical indicator work less painful.
-                                        </p>
-                                    </article>
-
-                                    <article class="card">
-                                        <h4>Network graph of themes &amp; indicators</h4>
-                                        <p>
-                                          I build a lightweight <strong>NetworkX graph</strong> where:
-                                        </p>
-                                        <ul>
-                                            <li>Nodes are indicators and thematic domains (e.g. “Human development”).</li>
-                                            <li>
-                                              Edges link indicators to domains, enabling quick visualisations and
-                                              simple subgraph queries.
-                                            </li>
-                                        </ul>
-                                        <p>
-                                          It’s intentionally minimal, but it shows how
-                                          <strong>graphs, embeddings and tabular ML</strong> can be combined
-                                          into a cohesive analysis toolkit for sustainability.
-                                        </p>
-                                    </article>
-                                </div>
-                            </section>
+               <section id="page-model" class="page">
+                  <div class="container">
+                    <div class="content-wrapper">
+                      <!-- Header card -->
+                      <section class="section">
+                        <div class="card glass section-header-card">
+                          <h2>Model &amp; Insights</h2>
+                          <p>
+                            The modelling strategy is deliberately simple and unapologetically rigorous:
+                            <strong>one outcome, a transparent baseline, and one non-linear model</strong>.
+                            The goal is not to win a Kaggle leaderboard, but to
+                            <strong>decode a global emissions system</strong> in a way that policy and investment teams can reason about.
+                          </p>
+                          <p>
+                            We start by understanding the geometry of the data (pairplots), move to
+                            <strong>model comparison</strong> (linear vs Random Forest), and then use
+                            <strong>SHAP</strong> to open the black box:
+                            global rankings of drivers and country–year level narratives.
+                          </p>
                         </div>
+                      </section>
+                
+                      <!-- Viz 1: Pairplot -->
+                      <section class="section viz-section">
+                        <div class="viz-row">
+                          <article class="card glass viz-image">
+                            <h3>1. The geometry of development &amp; emissions</h3>
+                            <img
+                              src="figures/pairplot_modeldata.png"
+                              alt="Pairplot of key model variables: log CO₂, income, education, health and energy indicators"
+                            />
+                          </article>
+                
+                          <article class="card glass viz-text">
+                            <h3>What we did &amp; what it shows</h3>
+                            <ul>
+                              <li>
+                                <strong>How we got here:</strong>
+                                once the harmonised country–year panel is built, we restrict to a clean modelling subset
+                                and generate a <code>pairplot_modeldata.png</code> of
+                                <strong>log CO₂ per capita</strong>, income, education, health and energy indicators.
+                              </li>
+                              <li>
+                                <strong>Structure in the cloud:</strong>
+                                the pairplot highlights the <strong>strong, non-linear coupling</strong> between income and emissions,
+                                the tight relationships between development indicators (education, life expectancy, child mortality),
+                                and how energy access and renewables slot into that space.
+                              </li>
+                              <li>
+                                <strong>Why it matters:</strong>
+                                this is the sanity check before any modelling –
+                                if the scatter geometry already tells you that a straight line will be crude,
+                                you know a non-linear model is not a luxury but a requirement.
+                              </li>
+                              <li>
+                                <strong>Takeaway:</strong>
+                                CO₂ per capita lives on a structured manifold with income and development, not in isolation.
+                                Any model that pretends otherwise is doing climate numerology, not analysis.
+                              </li>
+                            </ul>
+                          </article>
+                        </div>
+                      </section>
+                
+                      <!-- Viz 2: Model comparison table -->
+                      <section class="section viz-section">
+                        <div class="viz-row">
+                          <article class="card glass viz-image">
+                            <h3>2. Linear vs Random Forest – who explains the world better?</h3>
+                            <img
+                              src="figures/model_comparison_table.png"
+                              alt="Model performance comparison: Linear Regression vs Random Forest, with R² and MSE on the test set"
+                            />
+                          </article>
+                
+                          <article class="card glass viz-text">
+                            <h3>From baseline to benchmark</h3>
+                            <ul>
+                              <li>
+                                <strong>How we got here:</strong>
+                                we run a <strong>time-aware split</strong> – 1995–2012 as train, 2013–2021 as test –
+                                then fit a <strong>linear regression baseline</strong> and a
+                                <strong>Random Forest regressor</strong> on identical features.
+                              </li>
+                              <li>
+                                <strong>The scoreboard:</strong>
+                                the comparison table summarises test performance:
+                                the Random Forest beats the linear model decisively, reaching
+                                <strong>R² ≈ 0.89 on log CO₂ per capita</strong> with substantially lower MSE.
+                              </li>
+                              <li>
+                                <strong>Interpretation:</strong>
+                                the uplift is the price of admitting reality:
+                                emissions respond to development in a non-linear way, with threshold effects and interactions
+                                that a linear model cannot capture, no matter how elegant its coefficients look in a PDF.
+                              </li>
+                              <li>
+                                <strong>Governance angle:</strong>
+                                we now have two levers:
+                                a <strong>transparent baseline</strong> for quick communication,
+                                and a <strong>high-fidelity Random Forest</strong> whose behaviour can be made legible via SHAP.
+                              </li>
+                            </ul>
+                          </article>
+                        </div>
+                      </section>
+                
+                      <!-- Viz 3: SHAP beeswarm -->
+                      <section class="section viz-section">
+                        <div class="viz-row">
+                          <article class="card glass viz-image">
+                            <h3>3. SHAP beeswarm – the global behaviour of the model</h3>
+                            <img
+                              src="figures/shap_summary_beeswarm.png"
+                              alt="SHAP beeswarm summarising feature contributions for all country–year observations"
+                            />
+                          </article>
+                
+                          <article class="card glass viz-text">
+                            <h3>How development levers actually move emissions</h3>
+                            <ul>
+                              <li>
+                                <strong>How we got here:</strong>
+                                we compute SHAP values on the Random Forest predictions for the full test window,
+                                generating a <strong>beeswarm plot</strong> where each point is a country–year
+                                and each row is a feature’s contribution distribution.
+                              </li>
+                              <li>
+                                <strong>Reading the plot:</strong>
+                                the horizontal spread shows <strong>magnitude of impact</strong>,
+                                colour encodes feature value (e.g. low vs high income),
+                                and vertical density shows how often a feature meaningfully moves the prediction.
+                              </li>
+                              <li>
+                                <strong>What it reveals:</strong>
+                                <ul>
+                                  <li>
+                                    <code>gni_pc_log</code> dominates – higher income levels systematically push emissions up.
+                                  </li>
+                                  <li>
+                                    High <code>renewable_energy_pct</code> pulls predictions down, visibly bending the emissions curve.
+                                  </li>
+                                  <li>
+                                    Electricity access and urbanisation push emissions up on average, especially when combined with rising income.
+                                  </li>
+                                </ul>
+                              </li>
+                              <li>
+                                <strong>Why it matters:</strong>
+                                this is not just “feature importance” as a bar chart;
+                                it’s the <strong>joint empirical fingerprint</strong> of how development and energy choices
+                                have shaped emissions in practice across almost three decades.
+                              </li>
+                            </ul>
+                          </article>
+                        </div>
+                      </section>
+                
+                      <!-- Viz 4: SHAP global bar -->
+                      <section class="section viz-section">
+                        <div class="viz-row">
+                          <article class="card glass viz-image">
+                            <h3>4. SHAP global importance – ranking the levers</h3>
+                            <img
+                              src="figures/shap_summary_bar.png"
+                              alt="SHAP bar plot summarising mean absolute contribution by feature"
+                            />
+                          </article>
+                
+                          <article class="card glass viz-text">
+                            <h3>From intuition to an ordered playbook</h3>
+                            <ul>
+                              <li>
+                                <strong>How we got here:</strong>
+                                for each feature, we take the <strong>mean absolute SHAP value</strong> across all observations.
+                                That becomes the bar height in <code>shap_summary_bar.png</code> – a global ranking of influence.
+                              </li>
+                              <li>
+                                <strong>The hierarchy:</strong>
+                                <ul>
+                                  <li>
+                                    Income (<code>gni_pc_log</code>) sits at the top: no surprise, but now it’s quantified.
+                                  </li>
+                                  <li>
+                                    <code>renewable_energy_pct</code> and electricity access follow, framing the
+                                    <strong>energy system choice</strong> as the key counterweight to development-driven emissions.
+                                  </li>
+                                  <li>
+                                    Human development indicators (education, life expectancy, child mortality) and urbanisation
+                                    occupy the next tier: important, but second-order relative to income and energy mix.
+                                  </li>
+                                </ul>
+                              </li>
+                              <li>
+                                <strong>Policy reading:</strong>
+                                this ranking is the <strong>short list of levers</strong>.
+                                It tells a minister, a development bank or a climate fund exactly where to look first if they want
+                                to bend emissions without derailing development: income trajectories, renewables, electricity access,
+                                then the rest.
+                              </li>
+                              <li>
+                                <strong>Meta-point:</strong>
+                                by compressing three decades of cross-country data into this ordered set of drivers,
+                                the model moves the conversation from “we have many indicators” to
+                                <strong>“these are the levers that matter, in this order, given the data we actually observe.”</strong>
+                              </li>
+                            </ul>
+                          </article>
+                        </div>
+                      </section>
                     </div>
+                  </div>
                 </section>
 
                 <!-- PAGE 4: REFLECTION & LINKS (same grid-2 layout as Index A) -->
