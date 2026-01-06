@@ -1,0 +1,663 @@
+@charset "utf-8";
+
+/* =====================================================================
+   0. THEME TOKENS (easy knobs)
+   ===================================================================== */
+
+:root {
+    --color-page-bg: #f4efe6;
+    --color-text-main: #111111;
+    --color-text-muted: rgba(17, 17, 17, 0.75);
+
+    --glass-bg: rgba(20, 20, 24, 0.12);
+    --glass-bg-hover: rgba(20, 20, 24, 0.18);
+    --glass-border: rgba(0, 0, 0, 0.14);
+    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.16);
+    --glass-radius: 20px;
+
+    --color-accent: #111111;
+    --color-divider: rgba(0, 0, 0, 0.08);
+
+    --font-sans: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    --font-size-body: 16px;
+    --line-height-body: 1.6;
+
+    --layout-max-width: 1200px;
+    --page-padding-x: 20px;
+    --page-padding-y: 40px;
+    --section-gap: 40px;
+    --card-padding-y: 24px;
+    --card-padding-x: 28px;
+}
+
+/* =====================================================================
+   1. RESET + BASE
+   ===================================================================== */
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-sans);
+    font-size: var(--font-size-body);
+    line-height: var(--line-height-body);
+    background: var(--color-page-bg);
+    color: var(--color-text-main);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+h1, h2, h3, h4 {
+    font-weight: 600;
+    color: var(--color-text-main);
+}
+
+h1 {
+    font-size: clamp(2.2rem, 3vw, 2.8rem);
+    line-height: 1.2;
+    margin-bottom: 0.6em;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 2.4vw, 2.2rem);
+    margin-bottom: 0.5em;
+}
+
+h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5em;
+}
+
+p {
+    margin-bottom: 0.75em;
+}
+
+a {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.mt-lg { margin-top: 1.5rem; }
+
+/* =====================================================================
+   2. LAYOUT WRAPPERS
+   ===================================================================== */
+
+.page-wrapper {
+    padding: 30px 0;
+}
+
+.layout-shell {
+    max-width: calc(var(--layout-max-width) + 2 * var(--page-padding-x));
+    margin: 0 auto;
+}
+
+.container {
+    max-width: var(--layout-max-width);
+    margin: 0 auto;
+    padding: 0 var(--page-padding-x);
+}
+
+.content-wrapper {
+    min-height: calc(100vh - 260px);
+    padding: var(--page-padding-y) 0;
+}
+
+.section {
+    margin-bottom: var(--section-gap);
+}
+
+/* Multi-page system */
+.page {
+    display: none;
+}
+
+.page.is-active {
+    display: block;
+}
+
+/* =====================================================================
+   3. GLASS + CARDS + BUTTONS
+   ===================================================================== */
+
+.glass {
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border: 1px solid var(--glass-border);
+    border-radius: var(--glass-radius);
+    box-shadow: var(--glass-shadow);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    color: var(--color-text-main);
+}
+
+.glass:hover {
+    background: var(--glass-bg-hover);
+    transform: translateY(-4px);
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+}
+
+.card {
+    padding: var(--card-padding-y) var(--card-padding-x);
+    border-radius: var(--glass-radius);
+}
+
+.card--center {
+    text-align: center;
+}
+
+.card-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.06);
+    font-size: 24px;
+}
+
+/* Button */
+.btn-primary {
+    display: inline-block;
+    padding: 12px 32px;
+    border-radius: 999px;
+    border: 2px solid rgba(0, 0, 0, 0.12);
+    background: rgba(0, 0, 0, 0.06);
+    color: var(--color-text-main);
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+}
+
+/* =====================================================================
+   4. HEADER + NAV
+   ===================================================================== */
+
+.site-header {
+    margin-top: 10px;
+    padding-block: 8px;
+}
+
+/* Nav container just provides glass padding */
+.nav {
+    padding: 22px 28px;
+}
+
+/* Grid layout: [logo] [title + nav stacked] */
+.nav-layout {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    column-gap: 24px;
+    row-gap: 10px;
+    align-items: center;
+}
+
+/* Logo column: centered in its column and vertically between the two rows */
+.logo {
+    grid-row: 1 / span 2;   /* spans title row + nav row */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    align-self: center;     /* vertical centering within the grid area */
+    justify-self: center;   /* horizontal centering in its column */
+}
+
+.logo-icon {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.logo-icon svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+    transition: all 0.3s ease;
+}
+
+.logo:hover .logo-icon svg {
+    transform: scale(1.05) translateY(-2px);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.25));
+}
+
+
+/* Right side: title row + nav row stacked */
+.nav-main {
+    grid-column: 2 / 3;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch; /* lets the title span full width */
+    gap: 10px;
+}
+
+.nav-title {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    text-align: center;           /* centered in its row */
+    color: var(--color-text-main);
+    cursor: pointer;
+}
+
+/* Horizontal nav row */
+.nav-links {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    justify-content: center;  /* centers the whole button row under the title */
+}
+
+.nav-link {
+    display: inline-block;
+    padding: 11px 26px 12px;
+    border-radius: 14px;
+    border: 1px solid rgba(0, 0, 0, 0.18);
+    font-size: 0.98rem;
+    font-weight: 500;
+    text-decoration: none;
+    color: rgba(17, 17, 17, 0.9);
+    background: rgba(255, 255, 255, 0.05);  /* subtle glass on top of header card */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+/* Active tab: slightly raised and brighter, but static (no hover jump issue) */
+.nav-link.is-active {
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--color-text-main);
+    transform: translateY(-2px);
+    box-shadow: 0 14px 32px rgba(0, 0, 0, 0.24);
+}
+
+/* Hover bump only on non-active tabs, a bit more 3D */
+.nav-link:not(.is-active):hover {
+    background: rgba(255, 255, 255, 0.12);
+    color: var(--color-text-main);
+    transform: translateY(-4px);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28);
+}
+
+/* =====================================================================
+   5. HERO (OVERVIEW)
+   ===================================================================== */
+
+.section-hero {
+    padding: 40px 36px;
+}
+
+.hero-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1.3fr;
+    gap: 32px;
+    align-items: center;
+}
+
+.hero-media img {
+    width: 100%;
+    max-width: 440px;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+/* =====================================================================
+   6. GRID HELPERS
+   ===================================================================== */
+
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+}
+
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 24px;
+}
+
+.stack {
+    display: flex;
+    flex-direction: column;
+}
+
+.stack--gap-md {
+    gap: 16px;
+}
+
+/* =====================================================================
+   7. BACKGROUND SHAPES
+   ===================================================================== */
+
+.bg-shapes {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+}
+
+.shape {
+    position: absolute;
+    background: rgba(0, 0, 0, 0.035);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+    border-radius: 16px;
+    animation: float 6s ease-in-out infinite;
+}
+
+.shape-1 { width: 120px; height: 80px; top: 20%; left: 10%; }
+.shape-2 { width: 90px; height: 140px; top: 60%; right: 15%; }
+.shape-3 { width: 100px; height: 60px; bottom: 20%; left: 20%; }
+.shape-4 { width: 80px; height: 120px; top: 10%; right: 30%; }
+.shape-5 { width: 110px; height: 70px; bottom: 40%; right: 20%; }
+.shape-6 { width: 95px; height: 95px; top: 40%; left: 5%; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-18px); }
+}
+
+/* =====================================================================
+   8. PIPELINE / ARCHITECTURE
+   ===================================================================== */
+
+.section-header-card {
+    padding: 40px 40px 32px 40px;
+}
+
+.pipeline-grid {
+    display: grid;
+    gap: 14px;
+    margin-top: 18px;
+}
+
+.pipeline-row {
+    display: flex;
+    gap: 20px;
+    align-items: flex-start;
+    padding: 18px 20px;
+}
+
+.pipeline-left {
+    flex: 0 0 240px;
+    display: flex;
+    gap: 12px;
+    align-items: flex-start;
+}
+
+.pipeline-step {
+    width: 42px;
+    height: 42px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    background: rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.pipeline-right {
+    flex: 1;
+    min-width: 0;
+}
+
+.pipeline-right ul {
+    margin: 0 0 10px 1.1rem;
+}
+
+.pipeline-right li {
+    margin-bottom: 4px;
+}
+
+.pipeline-arrow {
+    margin: 6px 0 0;
+    font-size: 0.95rem;
+    opacity: 0.8;
+}
+
+/* =====================================================================
+   9. TIMELINE
+   ===================================================================== */
+
+.section-title {
+    margin-bottom: 14px;
+}
+
+.timeline {
+    display: grid;
+    gap: 18px;
+    margin-top: 10px;
+}
+
+.timeline-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    padding: 22px 24px;
+}
+
+.timeline-icon {
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background: rgba(0, 0, 0, 0.06);
+    border: 1px solid rgba(0, 0, 0, 0.10);
+}
+
+.timeline-content h3 {
+    margin-bottom: 8px;
+    font-size: 1.3rem;
+}
+
+.timeline-content ul {
+    margin: 6px 0 10px 1.1rem;
+}
+
+.timeline-content li {
+    margin-bottom: 5px;
+}
+
+/* =====================================================================
+   10. VIZ ROWS
+   ===================================================================== */
+
+.viz-section {
+    margin-top: 32px;
+}
+
+.viz-row {
+    display: grid;
+    grid-template-columns: 1.1fr 1.3fr;
+    gap: 24px;
+    align-items: stretch;
+}
+
+.viz-image,
+.viz-text {
+    padding: 24px 28px;
+}
+
+.viz-image {
+    text-align: center;
+}
+
+.viz-image img {
+    width: 100%;
+    height: auto;
+    border-radius: 12px;
+}
+
+.viz-text h3 {
+    text-align: center;
+    margin-bottom: 12px;
+}
+
+.viz-text ul {
+    margin-left: 1.1rem;
+}
+
+.viz-text li {
+    margin-bottom: 0.4rem;
+}
+
+/* =====================================================================
+   11. CONTACT / REFLECTION
+   ===================================================================== */
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.contact-item-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0.06);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.contact-item-text h4 {
+    margin-bottom: 4px;
+}
+
+/* =====================================================================
+   12. FOOTER
+   ===================================================================== */
+
+.site-footer {
+    margin-top: 40px;
+}
+
+.footer-content {
+    padding: 24px 24px 26px 24px;
+    text-align: center;
+    color: var(--color-text-muted);
+}
+
+.footer-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+    cursor: pointer;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 14px;
+}
+
+.footer-links .nav-link {
+    border-bottom: none;
+    padding: 6px 14px;
+}
+
+.copyright {
+    font-size: 0.85rem;
+    color: rgba(17, 17, 17, 0.6);
+    border-top: 1px solid var(--color-divider);
+    padding-top: 12px;
+}
+
+/* =====================================================================
+   13. RESPONSIVE
+   ===================================================================== */
+
+@media (max-width: 900px) {
+    .nav-layout {
+        grid-template-columns: auto;
+        grid-template-rows: auto auto auto;
+        row-gap: 10px;
+    }
+
+    .logo {
+        grid-row: 1 / 2;
+    }
+
+    .nav-main {
+        grid-column: 1 / 2;
+        align-items: flex-start;
+    }
+
+    .hero-grid,
+    .viz-row {
+        grid-template-columns: 1fr;
+    }
+
+    .pipeline-row {
+        flex-direction: column;
+    }
+
+    .timeline-item {
+        padding: 20px 18px;
+    }
+
+    .section-header-card {
+        padding: 28px 18px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .nav-link {
+        padding-inline: 14px;
+        font-size: 0.9rem;
+    }
+
+    .card {
+        padding: 20px 18px;
+    }
+}
+
+
+
+
+
+
+
+
+
