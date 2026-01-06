@@ -86,7 +86,7 @@
                 <section id="page-overview" class="page is-active">
                     <div class="container">
                         <div class="content-wrapper">
-                            <!-- Hero: image + text (same structure as Index A) -->
+                            <!-- Hero: image + text -->
                             <section class="section section-hero glass">
                                 <div class="hero-grid">
                                     <div class="hero-media">
@@ -98,19 +98,19 @@
                                     <div class="hero-body">
                                         <h1>How development and energy choices shape CO₂ emissions</h1>
                                         <p>
-                                          This project asks a deliberately blunt question:
+                                          The analysis asks a deliberately blunt question:
                                           <strong>how do income, human development and energy systems jointly drive territorial CO₂ emissions per capita across the world?</strong>
                                         </p>
                                         <p>
-                                          Using 1995–2021 data for <strong>204 countries</strong>, I build an
+                                          Using 1995–2021 data for <strong>204 countries</strong>, the work constructs an
                                           <strong>end-to-end, fully reproducible ML pipeline</strong> that links climate outcomes to
                                           development trajectories: from UNDP and World Bank indicators, through regression models,
                                           to <strong>SHAP-based explanations</strong> and an <strong>AI-assisted indicator search</strong>.
                                         </p>
                                         <p>
-                                          The project is designed to behave like a compact UN policy unit:
-                                          <strong>global coverage</strong>, <strong>clean methodology</strong>, and
-                                          <strong>outputs that non-technical decision-makers can actually use</strong>.
+                                          The project is engineered to behave like a compact policy analytics unit:
+                                          <strong>global coverage</strong>, <strong>transparent methodology</strong>, and
+                                          <strong>outputs that non-technical decision-makers can still reason with</strong>.
                                         </p>
 
                                         <a
@@ -125,25 +125,25 @@
                                 </div>
                             </section>
 
-                            <!-- 3-column Problem / Analysis / Solution (same visual rhythm as Index A) -->
+                            <!-- 3-column Problem / Analysis / Solution -->
                             <section class="section">
                                 <div class="grid-3">
                                     <article class="card glass card--center">
                                         <div class="card-icon">❓</div>
                                         <h3>The problem</h3>
                                         <p>
-                                          Governments and multilaterals are under pressure to
-                                          <strong>raise human development</strong> while
-                                          <strong>cutting emissions</strong>.
-                                          Those agendas often get treated as separate dashboards, not one system.
+                                          Governments, multilaterals and investors are expected to
+                                          <strong>raise human development</strong> while simultaneously
+                                          <strong>reducing emissions</strong>.
+                                          In practice, those agendas are often monitored on separate dashboards rather than as a single system.
                                         </p>
                                         <p>
                                           Without a structured view of how <strong>income, health, education, electricity access,
-                                          renewables and urbanisation</strong> interact, climate policy becomes a mix of slogans and
-                                          partial evidence.
+                                          renewables and urbanisation</strong> interact, climate policy frequently collapses into
+                                          slogans and partial evidence.
                                         </p>
                                         <p>
-                                          The risk: <strong>expensive decarbonisation plans</strong> that ignore social realities,
+                                          The result is a real risk of <strong>expensive decarbonisation plans</strong> that ignore social realities,
                                           or development strategies that quietly lock in high-carbon pathways for decades.
                                         </p>
                                     </article>
@@ -152,19 +152,19 @@
                                         <div class="card-icon">📊</div>
                                         <h3>The analysis</h3>
                                         <p>
-                                          I stitch together <strong>UNDP, World Bank and Our World in Data</strong> into a
-                                          <strong>country–year panel (1995–2021)</strong> and build a
-                                          <strong>time-aware modelling pipeline</strong>:
-                                          1995–2012 for training, 2013–2021 as an out-of-sample test.
+                                          Data from <strong>UNDP, the World Bank and Our World in Data</strong> are combined into a
+                                          <strong>country–year panel (1995–2021)</strong>, and a
+                                          <strong>time-aware modelling pipeline</strong> is constructed:
+                                          1995–2012 for training, 2013–2021 as an out-of-sample test period.
                                         </p>
                                         <p>
-                                          The core is a comparison between a <strong>linear regression baseline</strong> and a
+                                          The core modelling setup compares a <strong>linear regression baseline</strong> with a
                                           <strong>Random Forest model</strong> predicting log CO₂ emissions per capita from
                                           development and energy features.
                                         </p>
                                         <p>
-                                          I then use <strong>SHAP</strong> to open the model up and quantify
-                                          which levers actually move emissions, and by how much.
+                                          SHAP is then used to open the model and quantify
+                                          which levers move emissions, and in which direction, across the global panel.
                                         </p>
                                     </article>
 
@@ -172,20 +172,19 @@
                                         <div class="card-icon">✅</div>
                                         <h3>The solution</h3>
                                         <p>
-                                          The result is a <strong>global emissions explainer</strong>:
-                                          a model that doesn’t just predict which countries emit more, but
-                                          <strong>why</strong>, decomposed into income, health, education,
-                                          electricity access, renewables and demography.
+                                          The outcome is a <strong>global emissions explainer</strong>:
+                                          a model that not only predicts which countries emit more, but also decomposes those emissions into
+                                          contributions from income, health, education, electricity access, renewables and demography.
                                         </p>
                                         <p>
-                                          On top, I build a small <strong>semantic search tool</strong> and
-                                          <strong>indicator graph</strong> so analysts can discover relevant metrics
-                                          by asking questions in plain language.
+                                          On top of the model, a compact <strong>semantic search tool</strong> and
+                                          <strong>indicator graph</strong> allow analysts to discover relevant metrics
+                                          via natural-language queries and thematic groupings.
                                         </p>
                                         <p>
-                                          That combination – <strong>clean data</strong>,
+                                          The stack – <strong>clean data</strong>,
                                           <strong>interpretable ML</strong> and <strong>AI-assisted exploration</strong> –
-                                          is what makes this useful for both technical teams and policy leaders.
+                                          is designed to be directly usable by both technical teams and policy leaders.
                                         </p>
                                     </article>
                                 </div>
@@ -194,7 +193,7 @@
                     </div>
                 </section>
 
-                <!-- PAGE 2: DATA & PIPELINE (mirrors Index A’s “Technical Architecture” + timeline style) -->
+                <!-- PAGE 2: DATA & PIPELINE -->
                 <section id="page-pipeline" class="page">
                     <div class="container">
                         <div class="content-wrapper">
@@ -203,13 +202,13 @@
                                 <div class="card glass section-header-card">
                                     <h2>Data &amp; Pipeline – Technical Architecture</h2>
                                     <p>
-                                      The dataset is a cross-country panel where each record is a
-                                      <strong>country–year</strong> with CO₂ emissions per capita, human development indicators,
+                                      The dataset is a cross-country panel where each row is a
+                                      <strong>country–year</strong> with CO₂ emissions per capita, human development indicators
                                       and energy system variables.
                                     </p>
                                     <p>
-                                      The pipeline takes us from dispersed global datasets to a
-                                      <strong>single, model-ready panel</strong> and then to
+                                      The pipeline goes from dispersed global datasets to a
+                                      <strong>single, model-ready panel</strong>, and then to
                                       <strong>explainable predictions and semantic tools</strong>:
                                       raw CSVs &rarr; harmonised panel &rarr; ML model &rarr; SHAP &rarr; semantic search &amp; graph.
                                     </p>
@@ -226,7 +225,7 @@
                                                     <li>Sources: <strong>UNDP, World Bank, Our World in Data</strong>.</li>
                                                     <li>Scope: 204 countries, 1995–2021.</li>
                                                     <li>
-                                                      Harmonise ISO codes, drop aggregates (“World”, “High income”) and align time coverage
+                                                      Harmonised ISO codes, removal of aggregates (“World”, “High income”), and aligned time coverage
                                                       across all sources.
                                                     </li>
                                                 </ul>
@@ -252,8 +251,8 @@
                                                       electricity access, renewable share, urbanisation, population growth.
                                                     </li>
                                                     <li>
-                                                      Interpolate defensible gaps, drop rows with missing outcome/predictors,
-                                                      and build a clean Modelling DataFrame.
+                                                      Short gaps are interpolated where defensible, rows with missing outcome or features are dropped,
+                                                      and a compact modelling DataFrame is produced.
                                                     </li>
                                                 </ul>
                                                 <p class="pipeline-arrow">
@@ -273,8 +272,8 @@
                                                     <li>Train/test split: 1995–2012 vs 2013–2021.</li>
                                                     <li>Models: linear regression &amp; Random Forest.</li>
                                                     <li>
-                                                      Explainability via <strong>SHAP</strong> + a
-                                                      <strong>sentence-transformer semantic search</strong> and a
+                                                      Explainability via <strong>SHAP</strong>, plus a
+                                                      <strong>sentence-transformer semantic search</strong> index and a
                                                       <strong>NetworkX indicator graph</strong>.
                                                     </li>
                                                 </ul>
@@ -287,7 +286,7 @@
                                 </div>
                             </section>
 
-                            <!-- Timeline section (same component as Index A) -->
+                            <!-- Timeline section -->
                             <section class="section">
                                 <h2 class="section-title">End-to-End Pipeline (step-by-step)</h2>
                                 <div class="timeline">
@@ -296,8 +295,8 @@
                                         <div class="timeline-content">
                                             <h3>1. Ingest global datasets</h3>
                                             <p>
-                                              Load UNDP, World Bank and OWID CSVs into pandas. Standardise column names,
-                                              fix country codes, and sanity-check basic statistics, ranges and missing values.
+                                              UNDP, World Bank and OWID CSVs are loaded into pandas. Column names are standardised,
+                                              country codes are fixed, and basic statistics, ranges and missing values are checked.
                                             </p>
                                             <p><strong>Output:</strong> a set of clean DataFrames, one per source.</p>
                                         </div>
@@ -308,9 +307,8 @@
                                         <div class="timeline-content">
                                             <h3>2. Build the country–year panel</h3>
                                             <p>
-                                              Join sources on <code>[country, year]</code>, remove aggregates, and restrict to
-                                              1995–2021 where coverage is adequate. Interpolate short gaps where defensible
-                                              (within-country, over time).
+                                              Sources are joined on <code>[country, year]</code>, aggregates are removed, and coverage
+                                              is restricted to 1995–2021 where data are sufficient. Short gaps are interpolated within country.
                                             </p>
                                             <p><strong>Output:</strong> a harmonised panel of 204 countries × 27 years.</p>
                                         </div>
@@ -321,11 +319,12 @@
                                         <div class="timeline-content">
                                             <h3>3. Engineer features</h3>
                                             <p>
-                                              Create <code>co2_per_capita_log</code>, <code>gni_pc_log</code>,
-                                              <code>under5_mortality_log</code> and keep an interpretable set of
-                                              development and energy indicators.
+                                              Log transforms are applied to emissions, income and child mortality
+                                              (<code>co2_per_capita_log</code>, <code>gni_pc_log</code>,
+                                              <code>under5_mortality_log</code>), and an interpretable set of
+                                              development and energy indicators is retained.
                                             </p>
-                                            <p><strong>Output:</strong> one concise feature matrix ready for modelling.</p>
+                                            <p><strong>Output:</strong> a concise feature matrix for modelling.</p>
                                         </div>
                                     </article>
 
@@ -334,8 +333,8 @@
                                         <div class="timeline-content">
                                             <h3>4. Time-aware split &amp; baselines</h3>
                                             <p>
-                                              Split the dataset by year: 1995–2012 as training, 2013–2021 as test, mimicking
-                                              a realistic forecasting setup. Fit a linear regression as a transparent baseline.
+                                              The dataset is split chronologically: 1995–2012 as training, 2013–2021 as test,
+                                              mimicking a forecasting setup. A linear regression baseline is fitted and evaluated.
                                             </p>
                                             <p><strong>Output:</strong> baseline performance and sanity checks.</p>
                                         </div>
@@ -346,10 +345,10 @@
                                         <div class="timeline-content">
                                             <h3>5. Random Forest &amp; evaluation</h3>
                                             <p>
-                                              Train a Random Forest regressor on the same features. Evaluate on the test window
+                                              A Random Forest regressor is trained on the same feature set and evaluated on the test window
                                               with R² and MSE. The model reaches <strong>R² ≈ 0.89</strong> on log CO₂ per capita.
                                             </p>
-                                            <p><strong>Output:</strong> high-performing but still explainable model.</p>
+                                            <p><strong>Output:</strong> a high-performing but still explainable model.</p>
                                         </div>
                                     </article>
 
@@ -358,9 +357,9 @@
                                         <div class="timeline-content">
                                             <h3>6. SHAP &amp; country–year explanations</h3>
                                             <p>
-                                              Use SHAP to compute global feature importance and local contributions for each
-                                              country–year. Export summary plots and tables to <code>figures/</code> for use
-                                              in this site and in the notebooks.
+                                              SHAP values are computed for the Random Forest, yielding both global feature importance
+                                              and local contributions for each country–year. Summary plots and tables are exported to
+                                              <code>figures/</code>.
                                             </p>
                                             <p><strong>Output:</strong> auditable explanations for each prediction.</p>
                                         </div>
@@ -371,9 +370,9 @@
                                         <div class="timeline-content">
                                             <h3>7. Semantic search &amp; indicator graph</h3>
                                             <p>
-                                              Build a semantic index over indicator metadata using
-                                              <code>all-MiniLM-L6-v2</code> embeddings and a small NetworkX graph linking
-                                              indicators to themes such as “Emissions &amp; energy” or “Human development”.
+                                              A semantic index is built over indicator metadata using
+                                              <code>all-MiniLM-L6-v2</code> embeddings, together with a small NetworkX graph
+                                              linking indicators to themes such as “Emissions &amp; energy” and “Human development”.
                                             </p>
                                             <p><strong>Output:</strong> an AI-assisted navigation layer over the indicator space.</p>
                                         </div>
@@ -384,8 +383,8 @@
                     </div>
                 </section>
 
-                <!-- PAGE 3: MODEL & INSIGHTS (stylistically aligned with Index A’s section layout) -->
-               <section id="page-model" class="page">
+                <!-- PAGE 3: MODEL & INSIGHTS -->
+                <section id="page-model" class="page">
                   <div class="container">
                     <div class="content-wrapper">
                       <!-- Header card -->
@@ -393,16 +392,16 @@
                         <div class="card glass section-header-card">
                           <h2>Model &amp; Insights</h2>
                           <p>
-                            The modelling strategy is deliberately simple and unapologetically rigorous:
-                            <strong>one outcome, a transparent baseline, and one non-linear model</strong>.
-                            The goal is not to win a Kaggle leaderboard, but to
-                            <strong>decode a global emissions system</strong> in a way that policy and investment teams can reason about.
+                            The modelling strategy is intentionally compact:
+                            <strong>one outcome, a transparent linear baseline, and one non-linear model</strong>.
+                            The aim is to <strong>decode a global emissions system</strong> in a way that remains inspectable,
+                            rather than to optimise for leaderboard performance.
                           </p>
                           <p>
-                            We start by understanding the geometry of the data (pairplots), move to
-                            <strong>model comparison</strong> (linear vs Random Forest), and then use
-                            <strong>SHAP</strong> to open the black box:
-                            global rankings of drivers and country–year level narratives.
+                            The workflow moves from understanding the geometry of the data (pairplots), through
+                            <strong>baseline vs Random Forest comparison</strong>, and finally to
+                            <strong>SHAP-based explanations</strong> that provide both global driver rankings and
+                            country–year level narratives.
                           </p>
                         </div>
                       </section>
@@ -419,30 +418,29 @@
                           </article>
                 
                           <article class="card glass viz-text">
-                            <h3>What we did &amp; what it shows</h3>
+                            <h3>What the pairplot reveals</h3>
                             <ul>
                               <li>
-                                <strong>How we got here:</strong>
-                                once the harmonised country–year panel is built, we restrict to a clean modelling subset
-                                and generate a <code>pairplot_modeldata.png</code> of
-                                <strong>log CO₂ per capita</strong>, income, education, health and energy indicators.
+                                <strong>Construction:</strong>
+                                after building the harmonised country–year panel, a clean modelling subset is selected and a
+                                <code>pairplot_modeldata.png</code> is generated for
+                                <strong>log CO₂ per capita</strong>, income, education, health and key energy indicators.
                               </li>
                               <li>
-                                <strong>Structure in the cloud:</strong>
+                                <strong>Structure:</strong>
                                 the pairplot highlights the <strong>strong, non-linear coupling</strong> between income and emissions,
-                                the tight relationships between development indicators (education, life expectancy, child mortality),
-                                and how energy access and renewables slot into that space.
+                                tight relationships between development indicators (education, life expectancy, child mortality),
+                                and the positioning of energy access and renewables within that space.
                               </li>
                               <li>
-                                <strong>Why it matters:</strong>
-                                this is the sanity check before any modelling –
-                                if the scatter geometry already tells you that a straight line will be crude,
-                                you know a non-linear model is not a luxury but a requirement.
+                                <strong>Implication for modelling:</strong>
+                                the geometry makes clear that a purely linear specification is a coarse approximation:
+                                relevant structure lives in thresholds and interactions that require a non-linear model.
                               </li>
                               <li>
                                 <strong>Takeaway:</strong>
-                                CO₂ per capita lives on a structured manifold with income and development, not in isolation.
-                                Any model that pretends otherwise is doing climate numerology, not analysis.
+                                CO₂ per capita occupies a structured manifold with income and development,
+                                rather than behaving as an independent outcome.
                               </li>
                             </ul>
                           </article>
@@ -453,7 +451,7 @@
                       <section class="section viz-section">
                         <div class="viz-row">
                           <article class="card glass viz-image">
-                            <h3>2. Linear vs Random Forest – who explains the world better?</h3>
+                            <h3>2. Linear vs Random Forest – comparative performance</h3>
                             <img
                               src="figures/model_comparison_table.png"
                               alt="Model performance comparison: Linear Regression vs Random Forest, with R² and MSE on the test set"
@@ -461,31 +459,29 @@
                           </article>
                 
                           <article class="card glass viz-text">
-                            <h3>From baseline to benchmark</h3>
+                            <h3>Baseline and non-linear benchmark</h3>
                             <ul>
                               <li>
-                                <strong>How we got here:</strong>
-                                we run a <strong>time-aware split</strong> – 1995–2012 as train, 2013–2021 as test –
-                                then fit a <strong>linear regression baseline</strong> and a
-                                <strong>Random Forest regressor</strong> on identical features.
+                                <strong>Setup:</strong>
+                                a <strong>time-aware split</strong> is used – 1995–2012 as train, 2013–2021 as test –
+                                with a <strong>linear regression baseline</strong> and a
+                                <strong>Random Forest regressor</strong> fitted on identical features.
                               </li>
                               <li>
-                                <strong>The scoreboard:</strong>
+                                <strong>Scorecard:</strong>
                                 the comparison table summarises test performance:
-                                the Random Forest beats the linear model decisively, reaching
+                                the Random Forest outperforms the linear model, reaching
                                 <strong>R² ≈ 0.89 on log CO₂ per capita</strong> with substantially lower MSE.
                               </li>
                               <li>
                                 <strong>Interpretation:</strong>
-                                the uplift is the price of admitting reality:
-                                emissions respond to development in a non-linear way, with threshold effects and interactions
-                                that a linear model cannot capture, no matter how elegant its coefficients look in a PDF.
+                                the performance uplift reflects non-linear relationships and interactions between development and energy variables
+                                that a linear model cannot capture, even with careful feature engineering.
                               </li>
                               <li>
-                                <strong>Governance angle:</strong>
-                                we now have two levers:
-                                a <strong>transparent baseline</strong> for quick communication,
-                                and a <strong>high-fidelity Random Forest</strong> whose behaviour can be made legible via SHAP.
+                                <strong>Design choice:</strong>
+                                the linear model remains valuable as a transparent reference;
+                                the Random Forest serves as the high-fidelity model whose behaviour is subsequently interpreted via SHAP.
                               </li>
                             </ul>
                           </article>
@@ -496,7 +492,7 @@
                       <section class="section viz-section">
                         <div class="viz-row">
                           <article class="card glass viz-image">
-                            <h3>3. SHAP beeswarm – the global behaviour of the model</h3>
+                            <h3>3. SHAP beeswarm – global model behaviour</h3>
                             <img
                               src="figures/shap_summary_beeswarm.png"
                               alt="SHAP beeswarm summarising feature contributions for all country–year observations"
@@ -504,39 +500,39 @@
                           </article>
                 
                           <article class="card glass viz-text">
-                            <h3>How development levers actually move emissions</h3>
+                            <h3>How development levers move emissions</h3>
                             <ul>
                               <li>
-                                <strong>How we got here:</strong>
-                                we compute SHAP values on the Random Forest predictions for the full test window,
-                                generating a <strong>beeswarm plot</strong> where each point is a country–year
-                                and each row is a feature’s contribution distribution.
+                                <strong>Computation:</strong>
+                                SHAP values are calculated for the Random Forest over the full test window,
+                                producing a <strong>beeswarm plot</strong> where each point is a country–year and
+                                each row is the contribution distribution for one feature.
                               </li>
                               <li>
-                                <strong>Reading the plot:</strong>
-                                the horizontal spread shows <strong>magnitude of impact</strong>,
+                                <strong>How to read it:</strong>
+                                horizontal spread encodes <strong>impact magnitude</strong>,
                                 colour encodes feature value (e.g. low vs high income),
-                                and vertical density shows how often a feature meaningfully moves the prediction.
+                                and vertical density shows how frequently a feature meaningfully shifts the prediction.
                               </li>
                               <li>
-                                <strong>What it reveals:</strong>
+                                <strong>Key patterns:</strong>
                                 <ul>
                                   <li>
-                                    <code>gni_pc_log</code> dominates – higher income levels systematically push emissions up.
+                                    <code>gni_pc_log</code> dominates; higher income systematically pushes emissions upward.
                                   </li>
                                   <li>
-                                    High <code>renewable_energy_pct</code> pulls predictions down, visibly bending the emissions curve.
+                                    High <code>renewable_energy_pct</code> creates strong downward contributions,
+                                    visibly bending the emissions curve.
                                   </li>
                                   <li>
-                                    Electricity access and urbanisation push emissions up on average, especially when combined with rising income.
+                                    Electricity access and urbanisation tend to increase emissions, particularly in tandem with rising income.
                                   </li>
                                 </ul>
                               </li>
                               <li>
-                                <strong>Why it matters:</strong>
-                                this is not just “feature importance” as a bar chart;
-                                it’s the <strong>joint empirical fingerprint</strong> of how development and energy choices
-                                have shaped emissions in practice across almost three decades.
+                                <strong>Interpretation:</strong>
+                                the beeswarm encodes the joint empirical effect of development and energy choices on emissions
+                                across nearly three decades, rather than a single-country case study.
                               </li>
                             </ul>
                           </article>
@@ -558,38 +554,37 @@
                             <h3>From intuition to an ordered playbook</h3>
                             <ul>
                               <li>
-                                <strong>How we got here:</strong>
-                                for each feature, we take the <strong>mean absolute SHAP value</strong> across all observations.
-                                That becomes the bar height in <code>shap_summary_bar.png</code> – a global ranking of influence.
+                                <strong>Computation:</strong>
+                                for each feature, the <strong>mean absolute SHAP value</strong> is computed across all observations.
+                                These values define the bar heights in <code>shap_summary_bar.png</code>, yielding a global ranking of influence.
                               </li>
                               <li>
-                                <strong>The hierarchy:</strong>
+                                <strong>Hierarchy:</strong>
                                 <ul>
                                   <li>
-                                    Income (<code>gni_pc_log</code>) sits at the top: no surprise, but now it’s quantified.
+                                    Income (<code>gni_pc_log</code>) appears as the primary driver of higher emissions per capita.
                                   </li>
                                   <li>
-                                    <code>renewable_energy_pct</code> and electricity access follow, framing the
-                                    <strong>energy system choice</strong> as the key counterweight to development-driven emissions.
+                                    <code>renewable_energy_pct</code> and electricity access follow, emphasising the
+                                    <strong>energy system configuration</strong> as the main counterweight to development-driven emissions.
                                   </li>
                                   <li>
                                     Human development indicators (education, life expectancy, child mortality) and urbanisation
-                                    occupy the next tier: important, but second-order relative to income and energy mix.
+                                    form the next tier: important, but secondary relative to income and energy mix.
                                   </li>
                                 </ul>
                               </li>
                               <li>
                                 <strong>Policy reading:</strong>
-                                this ranking is the <strong>short list of levers</strong>.
-                                It tells a minister, a development bank or a climate fund exactly where to look first if they want
-                                to bend emissions without derailing development: income trajectories, renewables, electricity access,
-                                then the rest.
+                                the ranking yields a short, ordered list of levers:
+                                income trajectories, renewable deployment and electricity access dominate the emissions profile,
+                                with other development metrics shaping the residual variation.
                               </li>
                               <li>
-                                <strong>Meta-point:</strong>
-                                by compressing three decades of cross-country data into this ordered set of drivers,
-                                the model moves the conversation from “we have many indicators” to
-                                <strong>“these are the levers that matter, in this order, given the data we actually observe.”</strong>
+                                <strong>Meta-level use:</strong>
+                                compressing three decades of cross-country data into this hierarchy shifts the conversation from
+                                “many indicators” to
+                                <strong>“these are the levers that matter most, in this data, in this order.”</strong>
                               </li>
                             </ul>
                           </article>
@@ -599,7 +594,7 @@
                   </div>
                 </section>
 
-                <!-- PAGE 4: REFLECTION & LINKS (same grid-2 layout as Index A) -->
+                <!-- PAGE 4: REFLECTION & LINKS -->
                 <section id="page-reflection" class="page">
                     <div class="container">
                         <div class="content-wrapper">
@@ -607,41 +602,42 @@
                                 <article class="card glass">
                                     <h2>Reflection &amp; Extensions</h2>
                                     <p>
-                                      This project is a snapshot of how I like to work on
-                                      <strong>big, UN-scale questions</strong> using modern data tools:
-                                      clear framing, careful data work, interpretable models, and storylines
-                                      that are honest about uncertainty.
+                                      The project illustrates one way to handle
+                                      <strong>large, UN-scale questions</strong> using modern data tooling:
+                                      clear framing, disciplined data work, interpretable models and communication that
+                                      stays close to what the data can legitimately support.
                                     </p>
 
-                                    <h3>What it demonstrates</h3>
+                                    <h3>What the work demonstrates</h3>
                                     <ul>
                                         <li>
-                                          I can <strong>design and own an entire pipeline</strong>:
-                                          from sourcing multi-agency data, through modelling, to communication.
+                                          End-to-end ownership of the <strong>full pipeline</strong>:
+                                          sourcing multi-agency data, designing the modelling strategy, and presenting results for decision-makers.
                                         </li>
                                         <li>
-                                          I treat <strong>explainability as non-negotiable</strong>:
-                                          SHAP, semantic search and the indicator graph are part of the core design,
-                                          not a post-hoc patch.
+                                          <strong>Explainability is treated as a design constraint</strong>:
+                                          SHAP, semantic search and the indicator graph are integrated from the outset rather than added post hoc.
                                         </li>
                                         <li>
-                                          I’m comfortable operating at the intersection of
-                                          <strong>ML, policy analysis and data storytelling</strong>.
+                                          The analysis operates at the intersection of
+                                          <strong>machine learning, policy analysis and data storytelling</strong>,
+                                          without compromising technical detail.
                                         </li>
                                     </ul>
 
-                                    <h3>Next steps</h3>
+                                    <h3>Potential extensions</h3>
                                     <ul>
                                         <li>
-                                          Extend the panel with <strong>sectoral structure</strong> and technology variables
-                                          (industry mix, coal vs gas vs renewables, efficiency).
+                                          Enrich the panel with <strong>sectoral structure</strong> and technology variables
+                                          (industry mix, fuel composition, efficiency indicators).
                                         </li>
                                         <li>
-                                          Explore <strong>panel or sequence models</strong> to explicitly model transitions over time.
+                                          Explore <strong>panel or sequence models</strong> to represent transition dynamics
+                                          more explicitly over time.
                                         </li>
                                         <li>
-                                          Build <strong>scenario tools</strong> that let users stress-test different
-                                          development and energy pathways and see the implied emissions trajectories.
+                                          Develop <strong>scenario tooling</strong> that allows users to stress-test different
+                                          development and energy pathways and inspect the implied emissions trajectories.
                                         </li>
                                     </ul>
                                 </article>
@@ -714,7 +710,7 @@
                 </section>
             </main>
 
-            <!-- FOOTER (same structure as Index A, with project-specific text) -->
+            <!-- FOOTER -->
             <footer class="site-footer glass">
                 <div class="container">
                     <div class="footer-content">
