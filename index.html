@@ -1,650 +1,754 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CO₂ Emissions, Human Development &amp; Energy Transitions</title>
-  <link rel="stylesheet" href="template.css" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CO₂ Emissions, Human Development &amp; Energy Transitions</title>
+    <link rel="stylesheet" href="template.css" />
 </head>
 <body>
-  <!-- Floating background shapes (same pattern as Project A) -->
-  <div class="bg-shapes">
-    <div class="shape shape-1"></div>
-    <div class="shape shape-2"></div>
-    <div class="shape shape-3"></div>
-    <div class="shape shape-4"></div>
-    <div class="shape shape-5"></div>
-    <div class="shape shape-6"></div>
-  </div>
-
-  <div class="page-wrapper">
-    <div class="layout-shell">
-      <!-- HEADER -->
-      <header class="glass site-header">
-        <div class="container">
-          <nav class="nav glass">
-            <div class="nav-layout">
-              <!-- Left: logo -->
-              <div class="logo" data-page-target="page-overview">
-                <div class="logo-icon">
-                  <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <defs>
-                      <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
-                        <stop offset="0%" stop-color="#111111" stop-opacity="0.95" />
-                        <stop offset="100%" stop-color="#111111" stop-opacity="0.65" />
-                      </linearGradient>
-                    </defs>
-                    <rect x="4" y="4" width="56" height="56" rx="16" fill="url(#grad)" />
-                    <!-- Subtle grid / graph motif -->
-                    <g stroke="#f4efe6" stroke-width="1.2" stroke-linecap="round" opacity="0.7">
-                      <path d="M 10 46 L 10 26 L 18 36 L 26 20 L 26 46" />
-                      <path d="M 30 46 L 30 18 L 42 46 L 42 24" />
-                      <path d="M 46 46 L 46 22 L 54 30 L 54 46" />
-                    </g>
-                    <g fill="#f4efe6" opacity="0.9">
-                      <circle cx="10" cy="46" r="1.6" />
-                      <circle cx="18" cy="36" r="1.6" />
-                      <circle cx="26" cy="20" r="1.6" />
-                      <circle cx="30" cy="46" r="1.6" />
-                      <circle cx="42" cy="46" r="1.6" />
-                      <circle cx="46" cy="22" r="1.6" />
-                      <circle cx="54" cy="30" r="1.6" />
-                    </g>
-                  </svg>
-                </div>
-                <div class="logo-text">
-                  <div class="logo-title">ML × Sustainability</div>
-                  <div class="logo-subtitle">CO₂ · Human Development · Energy</div>
-                </div>
-              </div>
-
-              <!-- Right: title + nav -->
-              <div class="nav-main">
-                <div class="nav-title" data-page-target="page-overview">
-                  CO₂ Emissions, Human Development &amp; Energy Transitions
-                </div>
-
-                <div class="nav-links">
-                  <a href="#" class="nav-link is-active" data-page-target="page-overview">Overview</a>
-                  <a href="#" class="nav-link" data-page-target="page-pipeline">Data &amp; Pipeline</a>
-                  <a href="#" class="nav-link" data-page-target="page-model">Model &amp; Insights</a>
-                  <a href="#" class="nav-link" data-page-target="page-reflection">Reflection &amp; Links</a>
-                </div>
-              </div>
-            </div>
-          </nav>
-        </div>
-      </header>
-
-      <main>
-        <!-- PAGE 1: OVERVIEW -->
-        <section id="page-overview" class="page is-active">
-          <div class="container">
-            <div class="content-wrapper">
-              <!-- Hero -->
-              <section class="section section-hero glass">
-                <div class="hero-grid">
-                  <div class="hero-media">
-                    <img
-                      src="figures/shap_summary_beeswarm.png"
-                      alt="SHAP beeswarm: drivers of CO₂ emissions per capita"
-                    />
-                  </div>
-                  <div class="hero-body">
-                    <h1>How development and energy choices shape CO₂ emissions</h1>
-                    <p>
-                      This project asks a simple but high-stakes question:
-                      <strong>how do income, human development and energy systems jointly drive territorial CO₂ emissions per capita across the world?</strong>
-                      Using 1995–2021 data for 204 countries, I build an
-                      <strong>end-to-end, fully reproducible ML pipeline</strong> that connects climate outcomes to development trajectories.
-                    </p>
-                    <p>
-                      Under the hood, the work combines <strong>data engineering</strong> (UNDP, World Bank and Our World in Data),
-                      <strong>regression modelling</strong> (linear vs Random Forest),
-                      <strong>model explainability with SHAP</strong>, and
-                      <strong>AI-powered semantic search + graph structures</strong> for sustainability indicators.
-                      The aim is to think like a UN-level policy analyst but execute like a production ML engineer.
-                    </p>
-
-                    <div class="hero-meta">
-                      <div class="pill">Portfolio project · ML × Sustainability</div>
-                      <div class="pill">204 countries · 1995–2021</div>
-                      <div class="pill">Random Forest test R² ≈ 0.89 on log CO₂ per capita</div>
-                    </div>
-
-                    <div class="hero-actions">
-                      <a
-                        href="https://github.com/MNN1999/MLxSustainability"
-                        class="btn-primary"
-                        target="_blank"
-                        rel="noopener"
-                      >
-                        View GitHub repo
-                      </a>
-                      <a href="#" class="nav-link" data-page-target="page-model" style="margin-left:14px;">
-                        Jump to model &amp; insights →
-                      </a>
-                    </div>
-                  </div>
-                </div>
-              </section>
-
-              <!-- Overview cards -->
-              <section class="section">
-                <div class="grid-3">
-                  <article class="card glass card--center">
-                    <div class="card-icon">🌍</div>
-                    <h3>The big question</h3>
-                    <p>
-                      Can countries expand <strong>income, education, health and electricity access</strong>
-                      without locking in carbon-intensive pathways — and
-                      which levers (renewables, urbanisation, demographics) actually move the needle on
-                      <strong>CO₂ per capita</strong>?
-                    </p>
-                  </article>
-
-                  <article class="card glass card--center">
-                    <div class="card-icon">📊</div>
-                    <h3>What I built</h3>
-                    <p>
-                      A <strong>country–year panel</strong> combining UNDP, World Bank and OWID; a
-                      <strong>time-aware modelling pipeline</strong> (1995–2012 train, 2013–2021 test);
-                      <strong>linear vs Random Forest models</strong>; and
-                      <strong>SHAP-based explainability</strong> to understand drivers of emissions.
-                    </p>
-                  </article>
-
-                  <article class="card glass card--center">
-                    <div class="card-icon">🧠</div>
-                    <h3>Why it matters</h3>
-                    <p>
-                      Policy teams, multilateral banks and think-tanks need tools that explain, not just predict.
-                      This project shows how <strong>ML, semantic search and simple graph structures</strong>
-                      can help navigate complex indicator spaces for sustainability and climate policy design.
-                    </p>
-                  </article>
-                </div>
-              </section>
-            </div>
-          </div>
-        </section>
-
-        <!-- PAGE 2: DATA & PIPELINE -->
-        <section id="page-pipeline" class="page">
-          <div class="container">
-            <div class="content-wrapper">
-              <section class="section">
-                <h2>Data &amp; pipeline</h2>
-                <p>
-                  The pipeline is designed to be <strong>transparent, reproducible and audit-friendly</strong>.
-                  Every transformation from raw CSVs to the modelling dataset lives in notebooks and
-                  versioned environment files.
-                </p>
-              </section>
-
-              <section class="section glass">
-                <h3>Data sources</h3>
-                <div class="grid-3">
-                  <article class="card">
-                    <h4>CO₂ emissions</h4>
-                    <p>
-                      Territorial <strong>CO₂ emissions per capita</strong> and related variables from
-                      <strong>Our World in Data</strong>, filtered to 204 UNDP countries and a clean 1995–2021 window.
-                    </p>
-                  </article>
-                  <article class="card">
-                    <h4>Human development</h4>
-                    <p>
-                      <strong>Income, education and health</strong> from <strong>UNDP</strong>:
-                      gross national income per capita, mean years of schooling, life expectancy, under-five mortality.
-                    </p>
-                  </article>
-                  <article class="card">
-                    <h4>Energy &amp; structure</h4>
-                    <p>
-                      <strong>Energy access and system characteristics</strong> from the
-                      <strong>World Bank</strong> and OWID: electricity access, renewable energy share, urban population,
-                      population growth and other contextual indicators.
-                    </p>
-                  </article>
-                </div>
-              </section>
-
-              <section class="section glass">
-                <h3>From raw data to model-ready panel</h3>
-                <div class="grid-2">
-                  <article class="card">
-                    <h4>Coverage-aware cleaning</h4>
-                    <ul>
-                      <li>Remove non-countries and aggregates; harmonise country codes (UNDP/World Bank/OWID).</li>
-                      <li>
-                        Analyse <strong>coverage over time</strong> and restrict to 1995–2021 for a stable core set of indicators.
-                      </li>
-                      <li>
-                        Interpolate missing values within country where defensible; drop residual rows with missing outcome or predictors.
-                      </li>
-                    </ul>
-                  </article>
-                  <article class="card">
-                    <h4>Feature engineering</h4>
-                    <ul>
-                      <li>
-                        Log-transform right-skewed variables:
-                        <code>co2_per_capita_log</code>,
-                        <code>gni_pc_log</code>,
-                        <code>under5_mortality_log</code>.
-                      </li>
-                      <li>
-                        Construct a <strong>clean feature set</strong> balancing model performance and interpretability:
-                        income, education, health, mortality, electricity access, renewables, urbanisation, population growth.
-                      </li>
-                      <li>
-                        Standardise features where required (e.g. for the linear regression baseline).
-                      </li>
-                    </ul>
-                  </article>
-                </div>
-              </section>
-
-              <section class="section glass">
-                <h3>Notebooks &amp; environments</h3>
-                <p>
-                  The analysis is structured into three main notebooks, each backed by a dedicated Conda environment
-                  for reproducibility:
-                </p>
-
-                <div class="grid-3">
-                  <article class="card">
-                    <h4>1. Data preparation</h4>
-                    <p>
-                      <a href="https://github.com/MNN1999/MLxSustainability/blob/main/rawdata_processing.ipynb" target="_blank" rel="noopener">
-                        <code>rawdata_processing.ipynb</code>
-                      </a>
-                    </p>
-                    <p>
-                      Ingests, harmonises and cleans all raw sources, and writes a
-                      <code>model_data_clean.parquet</code> file for downstream modelling.
-                    </p>
-                  </article>
-                  <article class="card">
-                    <h4>2. EDA, modelling &amp; SHAP</h4>
-                    <p>
-                      <a href="https://github.com/MNN1999/MLxSustainability/blob/main/Eda_and_modelling.ipynb" target="_blank" rel="noopener">
-                        <code>Eda_and_modelling.ipynb</code>
-                      </a>
-                    </p>
-                    <p>
-                      Exploratory analysis, correlation structure, model training and evaluation, and
-                      SHAP-based feature attribution.
-                    </p>
-                  </article>
-                  <article class="card">
-                    <h4>3. Semantic search &amp; graph</h4>
-                    <p>
-                      <a href="https://github.com/MNN1999/MLxSustainability/blob/main/Semantics_and_networkgraph.ipynb" target="_blank" rel="noopener">
-                        <code>Semantics_and_networkgraph.ipynb</code>
-                      </a>
-                    </p>
-                    <p>
-                      Builds a transformer-based semantic search over indicator metadata and
-                      a small NetworkX graph linking indicators to thematic domains.
-                    </p>
-                  </article>
-                </div>
-
-                <p style="margin-top:18px;">
-                  Environments:
-                  <a href="https://github.com/MNN1999/MLxSustainability/blob/main/env/ds-shap_environment.yml" target="_blank" rel="noopener">
-                    Modelling &amp; SHAP
-                  </a>
-                  ·
-                  <a href="https://github.com/MNN1999/MLxSustainability/blob/main/env/ds-text_environment.yml" target="_blank" rel="noopener">
-                    Semantic search &amp; graph
-                  </a>
-                </p>
-              </section>
-            </div>
-          </div>
-        </section>
-
-        <!-- PAGE 3: MODEL & INSIGHTS -->
-        <section id="page-model" class="page">
-          <div class="container">
-            <div class="content-wrapper">
-              <section class="section">
-                <h2>Modelling &amp; key insights</h2>
-                <p>
-                  The modelling framework is deliberately simple: <strong>one outcome, one baseline, one non-linear model</strong>,
-                  with a strong focus on interpretability and policy-relevant insight rather than leaderboard chasing.
-                </p>
-              </section>
-
-              <section class="section glass">
-                <div class="grid-2">
-                  <article class="card">
-                    <h3>Target &amp; features</h3>
-                    <ul>
-                      <li>
-                        Outcome:
-                        <code>co2_per_capita_log = log(1 + co2_per_capita)</code>.
-                      </li>
-                      <li>
-                        Predictors:
-                        <code>gni_pc_log</code>,
-                        <code>mys</code>,
-                        <code>life_expectancy</code>,
-                        <code>under5_mortality_log</code>,
-                        <code>electricity_access_pct</code>,
-                        <code>renewable_energy_pct</code>,
-                        <code>urban_population_pct</code>,
-                        <code>population_growth_pct</code>.
-                      </li>
-                      <li>
-                        Time-based split:
-                        <strong>1995–2012 train</strong>,
-                        <strong>2013–2021 test</strong>, mimicking an out-of-sample policy forecasting setup.
-                      </li>
-                    </ul>
-                  </article>
-
-                  <article class="card">
-                    <h3>Models &amp; performance</h3>
-                    <p>
-                      I compare a <strong>standard linear regression</strong> to a
-                      <strong>Random Forest regressor</strong> (300 trees, default depth).
-                    </p>
-                    <table class="glass" style="width:100%; margin-top:10px; border-collapse:collapse;">
-                      <thead>
-                        <tr>
-                          <th style="text-align:left;">Model</th>
-                          <th style="text-align:left;">Dataset</th>
-                          <th style="text-align:left;">R²</th>
-                          <th style="text-align:left;">MSE</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td>LinearRegression</td>
-                          <td>test</td>
-                          <td>0.794</td>
-                          <td>0.151</td>
-                        </tr>
-                        <tr>
-                          <td>RandomForest</td>
-                          <td>test</td>
-                          <td><strong>0.888</strong></td>
-                          <td><strong>0.082</strong></td>
-                        </tr>
-                      </tbody>
-                    </table>
-                    <p style="margin-top:10px;">
-                      The Random Forest explains <strong>close to 89% of the variance</strong> in log CO₂ emissions per capita
-                      in the test period, a clear uplift over the linear baseline while still remaining interpretable
-                      via SHAP.
-                    </p>
-                  </article>
-                </div>
-              </section>
-
-              <section class="section glass">
-                <div class="grid-2">
-                  <article class="card">
-                    <h3>Global feature importance</h3>
-                    <p>
-                      Using both <strong>tree-based feature importance</strong> and
-                      <strong>SHAP global summaries</strong>, the picture is consistent:
-                    </p>
-                    <ul>
-                      <li><code>gni_pc_log</code> is by far the dominant predictor of CO₂ per capita.</li>
-                      <li>
-                        <code>renewable_energy_pct</code> is the second-strongest driver, with higher shares associated with
-                        lower predicted emissions.
-                      </li>
-                      <li>
-                        Electricity access, urbanisation, education and life expectancy
-                        push emissions up on average — capturing the reality that
-                        <strong>development has historically been carbon-intensive</strong>.
-                      </li>
-                      <li>
-                        Under-five mortality and population growth play smaller but still measurable roles.
-                      </li>
-                    </ul>
-                    <p>
-                      The SHAP bar and beeswarm plots make this ranking transparent, and give a
-                      <strong>single, auditable story</strong> that both technical and non-technical stakeholders can follow.
-                    </p>
-                  </article>
-
-                  <article class="card">
-                    <h3>Local explanations: country–year stories</h3>
-                    <p>
-                      SHAP values also give a local view:
-                      for each <strong>country–year</strong>, every feature gets a contribution score indicating how much it
-                      pushes the prediction up or down.
-                    </p>
-                    <ul>
-                      <li>
-                        High-income, highly electrified countries often have strong positive contributions from
-                        <code>gni_pc_log</code>, electricity access and urbanisation, partially offset by renewables.
-                      </li>
-                      <li>
-                        Emerging economies with rapidly rising access can show “step changes” in predicted emissions as
-                        infrastructure builds out.
-                      </li>
-                      <li>
-                        Countries with high renewable shares gain meaningful downward pressure on emissions per person,
-                        even at similar income levels.
-                      </li>
-                    </ul>
-                    <p>
-                      This is the level of granularity you want when asking:
-                      <em>“If we invest here rather than there, what does it do to our emissions profile?”</em>
-                    </p>
-                  </article>
-                </div>
-              </section>
-
-              <section class="section glass">
-                <h3>AI tools for indicator discovery</h3>
-                <div class="grid-2">
-                  <article class="card">
-                    <h4>Semantic search over indicators</h4>
-                    <p>
-                      I build a small <strong>semantic search tool</strong> over the indicator metadata using
-                      transformer-based sentence embeddings (<code>all-MiniLM-L6-v2</code>) and a cosine-similarity index.
-                    </p>
-                    <ul>
-                      <li>Each indicator has an ID, human-readable name and short description.</li>
-                      <li>
-                        A helper function <code>search_indicators(query, top_k)</code> returns the most relevant indicators
-                        for free-text queries like “child health and mortality” or “renewable energy and climate mitigation”.
-                      </li>
-                      <li>
-                        This mimics the kind of <strong>AI-assisted data extraction</strong> workflows used in large
-                        sustainability and climate synthesis projects.
-                      </li>
-                    </ul>
-                  </article>
-
-                  <article class="card">
-                    <h4>Graph of themes &amp; indicators</h4>
-                    <p>
-                      To show a basic graph-based structure, I build a <strong>NetworkX graph</strong> with:
-                    </p>
-                    <ul>
-                      <li>Indicator nodes (e.g. <code>gni_pc_log</code>, <code>renewable_energy_pct</code>).</li>
-                      <li>
-                        Thematic nodes such as “Emissions &amp; energy”, “Human development”, “Infrastructure &amp; access”,
-                        “Urbanisation”, “Demography”.
-                      </li>
-                      <li>
-                        Edges connecting indicators to themes, enabling simple queries and sub-graph visualisations.
-                      </li>
-                    </ul>
-                    <p>
-                      It’s intentionally lightweight, but it demonstrates how
-                      <strong>graphs, embeddings and classical ML</strong> can be stitched together for richer data discovery.
-                    </p>
-                  </article>
-                </div>
-              </section>
-            </div>
-          </div>
-        </section>
-
-        <!-- PAGE 4: REFLECTION & LINKS -->
-        <section id="page-reflection" class="page">
-          <div class="container">
-            <div class="content-wrapper">
-              <section class="section">
-                <h2>Reflection, limitations &amp; how I would extend this</h2>
-              </section>
-
-              <section class="section glass">
-                <div class="grid-2">
-                  <article class="card">
-                    <h3>What this project shows about how I work</h3>
-                    <ul>
-                      <li>
-                        I approach <strong>climate and development questions</strong> with a blend of
-                        statistical rigour and policy awareness: what we model, how we split, and how we evaluate
-                        are all aligned with out-of-sample decision making.
-                      </li>
-                      <li>
-                        I care about <strong>reproducibility</strong>: from raw data to environment files, everything is
-                        versioned, scripted and inspectable.
-                      </li>
-                      <li>
-                        I treat <strong>explainability as a first-class citizen</strong>, not an afterthought.
-                        SHAP, semantic search and the indicator graph are chosen to make the model’s behaviour legible
-                        to both technical and non-technical stakeholders.
-                      </li>
-                      <li>
-                        I am comfortable moving across the stack:
-                        from pandas and sklearn through SHAP and sentence transformers to NetworkX and environment management.
-                      </li>
-                    </ul>
-                  </article>
-
-                  <article class="card">
-                    <h3>Limitations &amp; next steps</h3>
-                    <ul>
-                      <li>
-                        The modelling is intentionally parsimonious: it does not include, for example, explicit technology
-                        diffusion variables, consumption-based emissions or sectoral structure.
-                      </li>
-                      <li>
-                        Temporal dynamics are captured only through the train/test split — a natural extension would be
-                        <strong>panel or sequence models</strong> that model transitions more explicitly.
-                      </li>
-                      <li>
-                        Causal interpretation is deliberately conservative; this is a
-                        <strong>predictive and descriptive tool</strong>, not a causal inference study.
-                      </li>
-                      <li>
-                        With more time, I would integrate <strong>scenario analysis</strong>:
-                        how different development and energy pathways play out in projected emissions per capita.
-                      </li>
-                    </ul>
-                  </article>
-                </div>
-              </section>
-
-              <section class="section glass">
-                <h3>Links &amp; navigation</h3>
-                <p>
-                  If you want to go deeper into the code or reproduce the results, start here:
-                </p>
-                <ul>
-                  <li>
-                    <strong>GitHub repository:</strong>
-                    <a href="https://github.com/MNN1999/MLxSustainability" target="_blank" rel="noopener">
-                      MLxSustainability
-                    </a>
-                  </li>
-                  <li>
-                    <strong>Data preparation notebook:</strong>
-                    <a href="https://github.com/MNN1999/MLxSustainability/blob/main/rawdata_processing.ipynb" target="_blank" rel="noopener">
-                      rawdata_processing.ipynb
-                    </a>
-                  </li>
-                  <li>
-                    <strong>EDA, modelling &amp; SHAP notebook:</strong>
-                    <a href="https://github.com/MNN1999/MLxSustainability/blob/main/Eda_and_modelling.ipynb" target="_blank" rel="noopener">
-                      Eda_and_modelling.ipynb
-                    </a>
-                  </li>
-                  <li>
-                    <strong>Semantic search &amp; indicator graph notebook:</strong>
-                    <a href="https://github.com/MNN1999/MLxSustainability/blob/main/Semantics_and_networkgraph.ipynb" target="_blank" rel="noopener">
-                      Semantics_and_networkgraph.ipynb
-                    </a>
-                  </li>
-                </ul>
-                <p>
-                  Use the navigation at the top or below to move between the high-level overview, pipeline,
-                  modelling details and reflections.
-                </p>
-              </section>
-            </div>
-          </div>
-        </section>
-      </main>
-
-      <!-- FOOTER -->
-      <footer class="site-footer glass">
-        <div class="container">
-          <div class="footer-content">
-            <div class="footer-logo" data-page-target="page-overview">
-              <div class="logo-icon">
-                <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <rect x="6" y="6" width="52" height="52" rx="16" fill="rgba(0,0,0,0.85)" />
-                  <g stroke="#f4efe6" stroke-width="1.4" stroke-linecap="round" fill="none">
-                    <path d="M 12 44 L 18 26 L 24 44" />
-                    <path d="M 28 44 L 28 24 L 40 44 L 40 24" />
-                    <path d="M 44 44 L 52 30" />
-                  </g>
-                </svg>
-              </div>
-              <div class="footer-logo-text">
-                <div class="logo-title">ML × Sustainability</div>
-                <div class="logo-subtitle">CO₂ · Human development · Energy transitions</div>
-              </div>
-            </div>
-
-            <div class="footer-links">
-              <a href="#" class="nav-link" data-page-target="page-overview">Overview</a>
-              <a href="#" class="nav-link" data-page-target="page-pipeline">Data &amp; Pipeline</a>
-              <a href="#" class="nav-link" data-page-target="page-model">Model &amp; Insights</a>
-              <a href="#" class="nav-link" data-page-target="page-reflection">Reflection &amp; Links</a>
-              <a
-                href="https://github.com/MNN1999/MLxSustainability"
-                class="nav-link"
-                target="_blank"
-                rel="noopener"
-              >
-                GitHub
-              </a>
-            </div>
-
-            <div class="copyright">
-              © <span id="year-span">2026</span> – CO₂, Human Development &amp; Energy Transitions · Built with Python, scikit-learn, SHAP, sentence-transformers &amp; NetworkX.
-            </div>
-          </div>
-        </div>
-      </footer>
+    <!-- Floating background shapes (same pattern as Project A) -->
+    <div class="bg-shapes">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="shape shape-4"></div>
+        <div class="shape shape-5"></div>
+        <div class="shape shape-6"></div>
     </div>
-  </div>
 
-  <script src="template.js"></script>
-  <script>
-    // Fallback year update if template.js doesn't already handle it
-    (function () {
-      var span = document.getElementById('year-span');
-      if (span) {
-        span.textContent = new Date().getFullYear();
-      }
-    })();
-  </script>
+    <div class="page-wrapper">
+        <div class="layout-shell">
+            <!-- HEADER -->
+            <header class="glass site-header">
+                <div class="container">
+                    <nav class="nav glass">
+                        <div class="nav-layout">
+                            <!-- Left column: same MNN logo as Index A -->
+                            <div class="logo" data-page-target="page-overview">
+                                <div class="logo-icon">
+                                    <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                      <!-- Letter strokes (graph edges) -->
+                                      <g stroke="#111111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                                        <!-- M -->
+                                        <path d="M 6 46 L 6 18 L 13 32 L 20 18 L 20 46" />
+                                        <!-- first N -->
+                                        <path d="M 26 46 L 26 18 L 40 46 L 40 18" />
+                                        <!-- second N -->
+                                        <path d="M 46 46 L 46 18 L 60 46 L 60 18" />
+                                      </g>
+
+                                      <!-- Nodes on M N N -->
+                                      <g fill="#111111">
+                                        <!-- M nodes -->
+                                        <circle cx="6" cy="46" r="2.8" />
+                                        <circle cx="6" cy="18" r="2.8" />
+                                        <circle cx="13" cy="32" r="2.5" opacity="0.95" />
+                                        <circle cx="20" cy="18" r="2.8" />
+                                        <circle cx="20" cy="46" r="2.8" />
+
+                                        <!-- First N nodes -->
+                                        <circle cx="26" cy="46" r="2.8" />
+                                        <circle cx="26" cy="18" r="2.8" />
+                                        <circle cx="40" cy="46" r="2.8" />
+                                        <circle cx="40" cy="18" r="2.8" />
+
+                                        <!-- Second N nodes -->
+                                        <circle cx="46" cy="46" r="2.8" />
+                                        <circle cx="46" cy="18" r="2.8" />
+                                        <circle cx="60" cy="46" r="2.8" />
+                                        <circle cx="60" cy="18" r="2.8" />
+                                      </g>
+                                    </svg>
+                                </div>
+                            </div>
+
+                            <!-- Right column: title row + nav row -->
+                            <div class="nav-main">
+                                <div class="nav-title" data-page-target="page-overview">
+                                    CO₂ Emissions, Human Development &amp; Energy Transitions
+                                </div>
+
+                                <div class="nav-links">
+                                    <a href="#" class="nav-link is-active" data-page-target="page-overview">Overview</a>
+                                    <a href="#" class="nav-link" data-page-target="page-pipeline">Data &amp; Pipeline</a>
+                                    <a href="#" class="nav-link" data-page-target="page-model">Model &amp; Insights</a>
+                                    <a href="#" class="nav-link" data-page-target="page-reflection">Reflection &amp; Links</a>
+                                </div>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </header>
+
+            <main>
+                <!-- PAGE 1: OVERVIEW -->
+                <section id="page-overview" class="page is-active">
+                    <div class="container">
+                        <div class="content-wrapper">
+                            <!-- Hero: image + text (same structure as Index A) -->
+                            <section class="section section-hero glass">
+                                <div class="hero-grid">
+                                    <div class="hero-media">
+                                        <img
+                                            src="figures/shap_summary_beeswarm.png"
+                                            alt="SHAP beeswarm: drivers of CO₂ emissions per capita"
+                                        />
+                                    </div>
+                                    <div class="hero-body">
+                                        <h1>How development and energy choices shape CO₂ emissions</h1>
+                                        <p>
+                                          This project asks a deliberately blunt question:
+                                          <strong>how do income, human development and energy systems jointly drive territorial CO₂ emissions per capita across the world?</strong>
+                                        </p>
+                                        <p>
+                                          Using 1995–2021 data for <strong>204 countries</strong>, I build an
+                                          <strong>end-to-end, fully reproducible ML pipeline</strong> that links climate outcomes to
+                                          development trajectories: from UNDP and World Bank indicators, through regression models,
+                                          to <strong>SHAP-based explanations</strong> and an <strong>AI-assisted indicator search</strong>.
+                                        </p>
+                                        <p>
+                                          The project is designed to behave like a compact UN policy unit:
+                                          <strong>global coverage</strong>, <strong>clean methodology</strong>, and
+                                          <strong>outputs that non-technical decision-makers can actually use</strong>.
+                                        </p>
+
+                                        <a
+                                            href="https://github.com/MNN1999/MLxSustainability"
+                                            class="btn-primary"
+                                            target="_blank"
+                                            rel="noopener"
+                                        >
+                                            View project on GitHub
+                                        </a>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- 3-column Problem / Analysis / Solution (same visual rhythm as Index A) -->
+                            <section class="section">
+                                <div class="grid-3">
+                                    <article class="card glass card--center">
+                                        <div class="card-icon">❓</div>
+                                        <h3>The problem</h3>
+                                        <p>
+                                          Governments and multilaterals are under pressure to
+                                          <strong>raise human development</strong> while
+                                          <strong>cutting emissions</strong>.
+                                          Those agendas often get treated as separate dashboards, not one system.
+                                        </p>
+                                        <p>
+                                          Without a structured view of how <strong>income, health, education, electricity access,
+                                          renewables and urbanisation</strong> interact, climate policy becomes a mix of slogans and
+                                          partial evidence.
+                                        </p>
+                                        <p>
+                                          The risk: <strong>expensive decarbonisation plans</strong> that ignore social realities,
+                                          or development strategies that quietly lock in high-carbon pathways for decades.
+                                        </p>
+                                    </article>
+
+                                    <article class="card glass card--center">
+                                        <div class="card-icon">📊</div>
+                                        <h3>The analysis</h3>
+                                        <p>
+                                          I stitch together <strong>UNDP, World Bank and Our World in Data</strong> into a
+                                          <strong>country–year panel (1995–2021)</strong> and build a
+                                          <strong>time-aware modelling pipeline</strong>:
+                                          1995–2012 for training, 2013–2021 as an out-of-sample test.
+                                        </p>
+                                        <p>
+                                          The core is a comparison between a <strong>linear regression baseline</strong> and a
+                                          <strong>Random Forest model</strong> predicting log CO₂ emissions per capita from
+                                          development and energy features.
+                                        </p>
+                                        <p>
+                                          I then use <strong>SHAP</strong> to open the model up and quantify
+                                          which levers actually move emissions, and by how much.
+                                        </p>
+                                    </article>
+
+                                    <article class="card glass card--center">
+                                        <div class="card-icon">✅</div>
+                                        <h3>The solution</h3>
+                                        <p>
+                                          The result is a <strong>global emissions explainer</strong>:
+                                          a model that doesn’t just predict which countries emit more, but
+                                          <strong>why</strong>, decomposed into income, health, education,
+                                          electricity access, renewables and demography.
+                                        </p>
+                                        <p>
+                                          On top, I build a small <strong>semantic search tool</strong> and
+                                          <strong>indicator graph</strong> so analysts can discover relevant metrics
+                                          by asking questions in plain language.
+                                        </p>
+                                        <p>
+                                          That combination – <strong>clean data</strong>,
+                                          <strong>interpretable ML</strong> and <strong>AI-assisted exploration</strong> –
+                                          is what makes this useful for both technical teams and policy leaders.
+                                        </p>
+                                    </article>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PAGE 2: DATA & PIPELINE (mirrors Index A’s “Technical Architecture” + timeline style) -->
+                <section id="page-pipeline" class="page">
+                    <div class="container">
+                        <div class="content-wrapper">
+                            <!-- Architecture section -->
+                            <section class="section">
+                                <div class="card glass section-header-card">
+                                    <h2>Data &amp; Pipeline – Technical Architecture</h2>
+                                    <p>
+                                      The dataset is a cross-country panel where each record is a
+                                      <strong>country–year</strong> with CO₂ emissions per capita, human development indicators,
+                                      and energy system variables.
+                                    </p>
+                                    <p>
+                                      The pipeline takes us from dispersed global datasets to a
+                                      <strong>single, model-ready panel</strong> and then to
+                                      <strong>explainable predictions and semantic tools</strong>:
+                                      raw CSVs &rarr; harmonised panel &rarr; ML model &rarr; SHAP &rarr; semantic search &amp; graph.
+                                    </p>
+
+                                    <div class="pipeline-grid">
+                                        <!-- Row 1 -->
+                                        <div class="pipeline-row card glass">
+                                            <div class="pipeline-left">
+                                                <div class="pipeline-step">1</div>
+                                                <h3>Data assembly &amp; harmonisation</h3>
+                                            </div>
+                                            <div class="pipeline-right">
+                                                <ul>
+                                                    <li>Sources: <strong>UNDP, World Bank, Our World in Data</strong>.</li>
+                                                    <li>Scope: 204 countries, 1995–2021.</li>
+                                                    <li>
+                                                      Harmonise ISO codes, drop aggregates (“World”, “High income”) and align time coverage
+                                                      across all sources.
+                                                    </li>
+                                                </ul>
+                                                <p class="pipeline-arrow">
+                                                    Heterogeneous CSVs &rarr; single, tidy country–year table.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Row 2 -->
+                                        <div class="pipeline-row card glass">
+                                            <div class="pipeline-left">
+                                                <div class="pipeline-step">2</div>
+                                                <h3>Model dataset &amp; feature set</h3>
+                                            </div>
+                                            <div class="pipeline-right">
+                                                <ul>
+                                                    <li>
+                                                      Outcome: <code>co2_per_capita_log = log(1 + co2_per_capita)</code>.
+                                                    </li>
+                                                    <li>
+                                                      Predictors: income, education, life expectancy, child mortality,
+                                                      electricity access, renewable share, urbanisation, population growth.
+                                                    </li>
+                                                    <li>
+                                                      Interpolate defensible gaps, drop rows with missing outcome/predictors,
+                                                      and build a clean Modelling DataFrame.
+                                                    </li>
+                                                </ul>
+                                                <p class="pipeline-arrow">
+                                                    Clean panel &rarr; model-ready feature matrix.
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <!-- Row 3 -->
+                                        <div class="pipeline-row card glass">
+                                            <div class="pipeline-left">
+                                                <div class="pipeline-step">3</div>
+                                                <h3>Models, SHAP &amp; semantic tools</h3>
+                                            </div>
+                                            <div class="pipeline-right">
+                                                <ul>
+                                                    <li>Train/test split: 1995–2012 vs 2013–2021.</li>
+                                                    <li>Models: linear regression &amp; Random Forest.</li>
+                                                    <li>
+                                                      Explainability via <strong>SHAP</strong> + a
+                                                      <strong>sentence-transformer semantic search</strong> and a
+                                                      <strong>NetworkX indicator graph</strong>.
+                                                    </li>
+                                                </ul>
+                                                <p class="pipeline-arrow">
+                                                    Panel &rarr; models &rarr; explainable, searchable insights.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+
+                            <!-- Timeline section (same component as Index A) -->
+                            <section class="section">
+                                <h2 class="section-title">End-to-End Pipeline (step-by-step)</h2>
+                                <div class="timeline">
+                                    <article class="timeline-item card glass">
+                                        <div class="timeline-icon">📥</div>
+                                        <div class="timeline-content">
+                                            <h3>1. Ingest global datasets</h3>
+                                            <p>
+                                              Load UNDP, World Bank and OWID CSVs into pandas. Standardise column names,
+                                              fix country codes, and sanity-check basic statistics, ranges and missing values.
+                                            </p>
+                                            <p><strong>Output:</strong> a set of clean DataFrames, one per source.</p>
+                                        </div>
+                                    </article>
+
+                                    <article class="timeline-item card glass">
+                                        <div class="timeline-icon">🧩</div>
+                                        <div class="timeline-content">
+                                            <h3>2. Build the country–year panel</h3>
+                                            <p>
+                                              Join sources on <code>[country, year]</code>, remove aggregates, and restrict to
+                                              1995–2021 where coverage is adequate. Interpolate short gaps where defensible
+                                              (within-country, over time).
+                                            </p>
+                                            <p><strong>Output:</strong> a harmonised panel of 204 countries × 27 years.</p>
+                                        </div>
+                                    </article>
+
+                                    <article class="timeline-item card glass">
+                                        <div class="timeline-icon">🧮</div>
+                                        <div class="timeline-content">
+                                            <h3>3. Engineer features</h3>
+                                            <p>
+                                              Create <code>co2_per_capita_log</code>, <code>gni_pc_log</code>,
+                                              <code>under5_mortality_log</code> and keep an interpretable set of
+                                              development and energy indicators.
+                                            </p>
+                                            <p><strong>Output:</strong> one concise feature matrix ready for modelling.</p>
+                                        </div>
+                                    </article>
+
+                                    <article class="timeline-item card glass">
+                                        <div class="timeline-icon">⏱️</div>
+                                        <div class="timeline-content">
+                                            <h3>4. Time-aware split &amp; baselines</h3>
+                                            <p>
+                                              Split the dataset by year: 1995–2012 as training, 2013–2021 as test, mimicking
+                                              a realistic forecasting setup. Fit a linear regression as a transparent baseline.
+                                            </p>
+                                            <p><strong>Output:</strong> baseline performance and sanity checks.</p>
+                                        </div>
+                                    </article>
+
+                                    <article class="timeline-item card glass">
+                                        <div class="timeline-icon">🤖</div>
+                                        <div class="timeline-content">
+                                            <h3>5. Random Forest &amp; evaluation</h3>
+                                            <p>
+                                              Train a Random Forest regressor on the same features. Evaluate on the test window
+                                              with R² and MSE. The model reaches <strong>R² ≈ 0.89</strong> on log CO₂ per capita.
+                                            </p>
+                                            <p><strong>Output:</strong> high-performing but still explainable model.</p>
+                                        </div>
+                                    </article>
+
+                                    <article class="timeline-item card glass">
+                                        <div class="timeline-icon">🧠</div>
+                                        <div class="timeline-content">
+                                            <h3>6. SHAP &amp; country–year explanations</h3>
+                                            <p>
+                                              Use SHAP to compute global feature importance and local contributions for each
+                                              country–year. Export summary plots and tables to <code>figures/</code> for use
+                                              in this site and in the notebooks.
+                                            </p>
+                                            <p><strong>Output:</strong> auditable explanations for each prediction.</p>
+                                        </div>
+                                    </article>
+
+                                    <article class="timeline-item card glass">
+                                        <div class="timeline-icon">🔍</div>
+                                        <div class="timeline-content">
+                                            <h3>7. Semantic search &amp; indicator graph</h3>
+                                            <p>
+                                              Build a semantic index over indicator metadata using
+                                              <code>all-MiniLM-L6-v2</code> embeddings and a small NetworkX graph linking
+                                              indicators to themes such as “Emissions &amp; energy” or “Human development”.
+                                            </p>
+                                            <p><strong>Output:</strong> an AI-assisted navigation layer over the indicator space.</p>
+                                        </div>
+                                    </article>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PAGE 3: MODEL & INSIGHTS (stylistically aligned with Index A’s section layout) -->
+                <section id="page-model" class="page">
+                    <div class="container">
+                        <div class="content-wrapper">
+                            <!-- Header card -->
+                            <section class="section">
+                                <div class="card glass section-header-card">
+                                    <h2>Model &amp; Insights</h2>
+                                    <p>
+                                      The modelling setup is intentionally simple:
+                                      <strong>one outcome, a transparent baseline, and one non-linear model</strong>.
+                                      The objective is not to win a benchmark, but to produce
+                                      <strong>policy-grade explanations</strong>.
+                                    </p>
+                                    <p>
+                                      We use the Random Forest as a non-linear lens on the development–emissions relationship,
+                                      and SHAP to translate that lens into a set of <strong>actionable levers</strong>:
+                                      which factors raise emissions, which help bend the curve, and where there is room
+                                      for development with limited carbon penalty.
+                                    </p>
+                                </div>
+                            </section>
+
+                            <!-- Block 1: target, features, performance -->
+                            <section class="section glass">
+                                <div class="grid-2">
+                                    <article class="card">
+                                        <h3>Target &amp; feature design</h3>
+                                        <ul>
+                                            <li>
+                                                Outcome:
+                                                <code>co2_per_capita_log = log(1 + co2_per_capita)</code>.
+                                            </li>
+                                            <li>
+                                                Predictors:
+                                                <code>gni_pc_log</code> (income),
+                                                <code>mys</code> (education),
+                                                <code>life_expectancy</code>,
+                                                <code>under5_mortality_log</code>,
+                                                <code>electricity_access_pct</code>,
+                                                <code>renewable_energy_pct</code>,
+                                                <code>urban_population_pct</code>,
+                                                <code>population_growth_pct</code>.
+                                            </li>
+                                            <li>
+                                                Time-based split:
+                                                <strong>1995–2012 train</strong>,
+                                                <strong>2013–2021 test</strong>.
+                                            </li>
+                                        </ul>
+                                    </article>
+
+                                    <article class="card">
+                                        <h3>Models &amp; performance</h3>
+                                        <p>
+                                          Linear regression provides the baseline; a Random Forest captures non-linearities
+                                          and interactions while remaining compatible with SHAP explanations.
+                                        </p>
+                                        <table class="glass" style="width:100%; margin-top:10px; border-collapse:collapse;">
+                                            <thead>
+                                                <tr>
+                                                    <th style="text-align:left;">Model</th>
+                                                    <th style="text-align:left;">Dataset</th>
+                                                    <th style="text-align:left;">R²</th>
+                                                    <th style="text-align:left;">MSE</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>LinearRegression</td>
+                                                    <td>test</td>
+                                                    <td>0.794</td>
+                                                    <td>0.151</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>RandomForest</td>
+                                                    <td>test</td>
+                                                    <td><strong>0.888</strong></td>
+                                                    <td><strong>0.082</strong></td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                        <p style="margin-top:10px;">
+                                          The Random Forest explains <strong>~89% of the variance</strong> in log CO₂ per capita
+                                          in the test window, providing a strong but still interpretable basis for insight.
+                                        </p>
+                                    </article>
+                                </div>
+                            </section>
+
+                            <!-- Block 2: global vs local SHAP -->
+                            <section class="section glass">
+                                <div class="grid-2">
+                                    <article class="card">
+                                        <h3>Global feature importance</h3>
+                                        <p>
+                                          SHAP and tree-based feature importance paint a consistent hierarchy:
+                                        </p>
+                                        <ul>
+                                            <li><code>gni_pc_log</code> is the dominant driver of higher emissions per capita.</li>
+                                            <li>
+                                              <code>renewable_energy_pct</code> exerts a strong negative effect: higher shares
+                                              systematically push predicted emissions down.
+                                            </li>
+                                            <li>
+                                              Electricity access, urbanisation, education and life expectancy
+                                              increase emissions on average – reflecting that
+                                              <strong>historical development has been carbon-intensive</strong>.
+                                            </li>
+                                            <li>
+                                              Under-five mortality and population growth play smaller, but non-zero, roles.
+                                            </li>
+                                        </ul>
+                                        <p>
+                                          The global SHAP summary is the “league table” of levers – it tells us where
+                                          to look when designing policy.
+                                        </p>
+                                    </article>
+
+                                    <article class="card">
+                                        <h3>Local stories: country–year decompositions</h3>
+                                        <p>
+                                          SHAP values at the country–year level show how the same model behaves across
+                                          different development paths:
+                                        </p>
+                                        <ul>
+                                            <li>
+                                              High-income, fully electrified countries typically have strong positive pushes
+                                              from income, urban share and electricity access, partially offset by renewables.
+                                            </li>
+                                            <li>
+                                              Emerging economies show “jumps” in predicted emissions when electricity access
+                                              and urbanisation accelerate.
+                                            </li>
+                                            <li>
+                                              Countries with high <code>renewable_energy_pct</code> get visible downward
+                                              corrections even at similar income levels.
+                                            </li>
+                                        </ul>
+                                        <p>
+                                          This is the level you need for questions like:
+                                          <em>“If we scale renewables and electrification in this country, what happens to the
+                                          emissions profile conditional on its income?”</em>
+                                        </p>
+                                    </article>
+                                </div>
+                            </section>
+
+                            <!-- Block 3: AI tools (semantic search + graph) -->
+                            <section class="section glass">
+                                <h3>AI tools for indicator discovery</h3>
+                                <div class="grid-2">
+                                    <article class="card">
+                                        <h4>Semantic search over indicators</h4>
+                                        <p>
+                                          Using a transformer model (<code>all-MiniLM-L6-v2</code>), I embed short descriptions
+                                          of each indicator and expose a helper:
+                                          <code>search_indicators(query, top_k)</code>.
+                                        </p>
+                                        <ul>
+                                            <li>
+                                              Queries like “energy poverty”, “child health”, or “urban emissions”
+                                              return the closest indicators in embedding space.
+                                            </li>
+                                            <li>
+                                              This mirrors how analysts actually think: they start with a question,
+                                              not a column name.
+                                            </li>
+                                        </ul>
+                                        <p>
+                                          It’s a small but concrete example of using <strong>modern NLP</strong> to
+                                          make classical indicator work less painful.
+                                        </p>
+                                    </article>
+
+                                    <article class="card">
+                                        <h4>Network graph of themes &amp; indicators</h4>
+                                        <p>
+                                          I build a lightweight <strong>NetworkX graph</strong> where:
+                                        </p>
+                                        <ul>
+                                            <li>Nodes are indicators and thematic domains (e.g. “Human development”).</li>
+                                            <li>
+                                              Edges link indicators to domains, enabling quick visualisations and
+                                              simple subgraph queries.
+                                            </li>
+                                        </ul>
+                                        <p>
+                                          It’s intentionally minimal, but it shows how
+                                          <strong>graphs, embeddings and tabular ML</strong> can be combined
+                                          into a cohesive analysis toolkit for sustainability.
+                                        </p>
+                                    </article>
+                                </div>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- PAGE 4: REFLECTION & LINKS (same grid-2 layout as Index A) -->
+                <section id="page-reflection" class="page">
+                    <div class="container">
+                        <div class="content-wrapper">
+                            <section class="section grid-2">
+                                <article class="card glass">
+                                    <h2>Reflection &amp; Extensions</h2>
+                                    <p>
+                                      This project is a snapshot of how I like to work on
+                                      <strong>big, UN-scale questions</strong> using modern data tools:
+                                      clear framing, careful data work, interpretable models, and storylines
+                                      that are honest about uncertainty.
+                                    </p>
+
+                                    <h3>What it demonstrates</h3>
+                                    <ul>
+                                        <li>
+                                          I can <strong>design and own an entire pipeline</strong>:
+                                          from sourcing multi-agency data, through modelling, to communication.
+                                        </li>
+                                        <li>
+                                          I treat <strong>explainability as non-negotiable</strong>:
+                                          SHAP, semantic search and the indicator graph are part of the core design,
+                                          not a post-hoc patch.
+                                        </li>
+                                        <li>
+                                          I’m comfortable operating at the intersection of
+                                          <strong>ML, policy analysis and data storytelling</strong>.
+                                        </li>
+                                    </ul>
+
+                                    <h3>Next steps</h3>
+                                    <ul>
+                                        <li>
+                                          Extend the panel with <strong>sectoral structure</strong> and technology variables
+                                          (industry mix, coal vs gas vs renewables, efficiency).
+                                        </li>
+                                        <li>
+                                          Explore <strong>panel or sequence models</strong> to explicitly model transitions over time.
+                                        </li>
+                                        <li>
+                                          Build <strong>scenario tools</strong> that let users stress-test different
+                                          development and energy pathways and see the implied emissions trajectories.
+                                        </li>
+                                    </ul>
+                                </article>
+
+                                <article class="card glass">
+                                    <h2>Links</h2>
+                                    <div class="stack stack--gap-md">
+                                        <div class="contact-item">
+                                            <div class="contact-item-icon">💼</div>
+                                            <div class="contact-item-text">
+                                                <h4>GitHub Repository</h4>
+                                                <p>
+                                                    <a href="https://github.com/MNN1999/MLxSustainability"
+                                                       target="_blank"
+                                                       rel="noopener">
+                                                        github.com/MNN1999/MLxSustainability
+                                                    </a>
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="contact-item">
+                                            <div class="contact-item-icon">📓</div>
+                                            <div class="contact-item-text">
+                                                <h4>Key notebooks</h4>
+                                                <p>
+                                                    <a href="https://github.com/MNN1999/MLxSustainability/blob/main/rawdata_processing.ipynb"
+                                                       target="_blank"
+                                                       rel="noopener">
+                                                        rawdata_processing.ipynb
+                                                    </a>
+                                                    &nbsp;– data preparation
+                                                </p>
+                                                <p>
+                                                    <a href="https://github.com/MNN1999/MLxSustainability/blob/main/Eda_and_modelling.ipynb"
+                                                       target="_blank"
+                                                       rel="noopener">
+                                                        Eda_and_modelling.ipynb
+                                                    </a>
+                                                    &nbsp;– EDA, modelling &amp; SHAP
+                                                </p>
+                                                <p>
+                                                    <a href="https://github.com/MNN1999/MLxSustainability/blob/main/Semantics_and_networkgraph.ipynb"
+                                                       target="_blank"
+                                                       rel="noopener">
+                                                        Semantics_and_networkgraph.ipynb
+                                                    </a>
+                                                    &nbsp;– semantic search &amp; graph
+                                                </p>
+                                            </div>
+                                        </div>
+
+                                        <div class="contact-item">
+                                            <div class="contact-item-icon">📧</div>
+                                            <div class="contact-item-text">
+                                                <h4>Contact</h4>
+                                                <p>nabeelnuman9999@gmail.com</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <p class="mt-lg">
+                                        Recommended reading order:
+                                        Overview &rarr; Data &amp; pipeline &rarr; Model &amp; insights &rarr; Notebooks on GitHub.
+                                    </p>
+                                </article>
+                            </section>
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <!-- FOOTER (same structure as Index A, with project-specific text) -->
+            <footer class="site-footer glass">
+                <div class="container">
+                    <div class="footer-content">
+                        <div class="footer-logo" data-page-target="page-overview">
+                            <div class="logo-icon">
+                                <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                                  <!-- Letter strokes (graph edges) -->
+                                  <g stroke="#111111" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" fill="none">
+                                    <!-- M -->
+                                    <path d="M 6 46 L 6 18 L 13 32 L 20 18 L 20 46" />
+                                    <!-- first N -->
+                                    <path d="M 26 46 L 26 18 L 40 46 L 40 18" />
+                                    <!-- second N -->
+                                    <path d="M 46 46 L 46 18 L 60 46 L 60 18" />
+                                  </g>
+
+                                  <!-- Nodes on M N N -->
+                                  <g fill="#111111">
+                                    <!-- M nodes -->
+                                    <circle cx="6" cy="46" r="2.8" />
+                                    <circle cx="6" cy="18" r="2.8" />
+                                    <circle cx="13" cy="32" r="2.5" opacity="0.95" />
+                                    <circle cx="20" cy="18" r="2.8" />
+                                    <circle cx="20" cy="46" r="2.8" />
+
+                                    <!-- First N nodes -->
+                                    <circle cx="26" cy="46" r="2.8" />
+                                    <circle cx="26" cy="18" r="2.8" />
+                                    <circle cx="40" cy="46" r="2.8" />
+                                    <circle cx="40" cy="18" r="2.8" />
+
+                                    <!-- Second N nodes -->
+                                    <circle cx="46" cy="46" r="2.8" />
+                                    <circle cx="46" cy="18" r="2.8" />
+                                    <circle cx="60" cy="46" r="2.8" />
+                                    <circle cx="60" cy="18" r="2.8" />
+                                  </g>
+                                </svg>
+                            </div>
+                            <span>CO₂ Emissions, Human Development &amp; Energy Transitions</span>
+                        </div>
+                        <div class="copyright">
+                            &copy; 2026 | Project Portfolio | Created by M. Nabeel Numan | All rights reserved.
+                        </div>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <script src="template.js"></script>
 </body>
 </html>
